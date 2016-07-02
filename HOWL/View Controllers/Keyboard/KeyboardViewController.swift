@@ -68,9 +68,9 @@ class KeyboardViewController: UIViewController {
     func updateSynthesizer() {
         notes.keys.forEach { touch in
             if let key = keyForTouch(touch) {
-                updateNoteForTouch(touch, withKey: key)
+                updateNote(forTouch: touch, withKey: key)
             } else {
-                stopNoteForTouch(touch)
+                stopNote(forTouch: touch)
             }
         }
     }
@@ -78,17 +78,17 @@ class KeyboardViewController: UIViewController {
     func reloadSynthesizer() {
         notes.keys.forEach { touch in
             if let key = keyForTouch(touch) {
-                stopNoteForTouch(touch)
-                playNoteForTouch(touch, withKey: key)
+                stopNote(forTouch: touch)
+                playNote(forTouch: touch, withKey: key)
             } else {
-                stopNoteForTouch(touch)
+                stopNote(forTouch: touch)
             }
         }
     }
     
     func stopSynthesizer() {
         notes.keys.forEach { touch in
-            stopNoteForTouch(touch)
+            stopNote(forTouch: touch)
         }
     }
     
@@ -98,24 +98,24 @@ class KeyboardViewController: UIViewController {
     
     // MARK: - Note actions
     
-    func playNoteForTouch(touch: UITouch, withKey key: Key) {
+    func playNote(forTouch touch: UITouch, withKey key: Key) {
         let note = Audio.client.synthesizer.note(withFrequency: key.pitch.frequency)
         Audio.client.synthesizer.play(note: note)
         notes[touch] = (key: key, note: note)
     }
     
-    func updateNoteForTouch(touch: UITouch, withKey key: Key) {
+    func updateNote(forTouch touch: UITouch, withKey key: Key) {
         if let oldKey = notes[touch]?.key {
             if oldKey != key {
-                stopNoteForTouch(touch)
-                playNoteForTouch(touch, withKey: key)
+                stopNote(forTouch: touch)
+                playNote(forTouch: touch, withKey: key)
             }
         } else if (touch.phase != .Ended) {
-            playNoteForTouch(touch, withKey: key)
+            playNote(forTouch: touch, withKey: key)
         }
     }
     
-    func stopNoteForTouch(touch: UITouch) {
+    func stopNote(forTouch touch: UITouch) {
         if let note = notes[touch]?.note {
             Audio.client.synthesizer.stop(note: note)
             notes[touch] = nil
@@ -222,27 +222,27 @@ extension KeyboardViewController: MultitouchGestureRecognizerDelegate {
     
     func multitouchGestureRecognizer(gestureRecognizer: MultitouchGestureRecognizer, touchDidBegin touch: UITouch) {
         if let key = keyForTouch(touch) {
-            playNoteForTouch(touch, withKey: key)
+            playNote(forTouch: touch, withKey: key)
         }
         reloadView()
     }
     
     func multitouchGestureRecognizer(gestureRecognizer: MultitouchGestureRecognizer, touchDidMove touch: UITouch) {
         if let key = keyForTouch(touch) {
-            updateNoteForTouch(touch, withKey: key)
+            updateNote(forTouch: touch, withKey: key)
         } else {
-            stopNoteForTouch(touch)
+            stopNote(forTouch: touch)
         }
         reloadView()
     }
     
     func multitouchGestureRecognizer(gestureRecognizer: MultitouchGestureRecognizer, touchDidCancel touch: UITouch) {
-        stopNoteForTouch(touch)
+        stopNote(forTouch: touch)
         reloadView()
     }
     
     func multitouchGestureRecognizer(gestureRecognizer: MultitouchGestureRecognizer, touchDidEnd touch: UITouch) {
-        stopNoteForTouch(touch)
+        stopNote(forTouch: touch)
         reloadView()
     }
     
