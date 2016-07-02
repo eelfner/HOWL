@@ -23,29 +23,29 @@ import ProtonomeAudioKitControls
     
     // MARK: - Overrides
     
-    override func updateValuesFromCsound() {
-        super.updateValuesFromCsound()
-        
-        let trailLocations: [CGPoint?] = {
-            guard self.selected == true else {
-                return []
-            }
-            
-            let trailLocation = self.trailLocation
-            let trailLocations = self.trailLocations
-        
-            return Array(([trailLocation] + trailLocations).prefix(self.trailLength))
-        }()
-        
-        let colorHue = self.trailHue
-        let colorSaturation = self.trailSaturation
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.trailLocations = trailLocations
-            self.colorHue = colorHue
-            self.colorSaturation = colorSaturation
-        })
-    }
+//    override func updateValuesFromCsound() {
+//        super.updateValuesFromCsound()
+//        
+//        let trailLocations: [CGPoint?] = {
+//            guard self.selected == true else {
+//                return []
+//            }
+//            
+//            let trailLocation = self.trailLocation
+//            let trailLocations = self.trailLocations
+//        
+//            return Array(([trailLocation] + trailLocations).prefix(self.trailLength))
+//        }()
+//        
+//        let colorHue = self.trailHue
+//        let colorSaturation = self.trailSaturation
+//        
+//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//            self.trailLocations = trailLocations
+//            self.colorHue = colorHue
+//            self.colorSaturation = colorSaturation
+//        })
+//    }
     
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
@@ -77,24 +77,18 @@ import ProtonomeAudioKitControls
     }
     
     private var trailLocation: CGPoint? {
-        return Audio.client?.vocoder.location.lerp(rect: bounds)
+        return Audio.client.vocoder.location.lerp(rect: bounds)
     }
     
     private var trailHue: CGFloat {
-        guard let location = Audio.client?.vocoder.location else {
-            return 0.0
-        }
-        
+        let location = Audio.client.vocoder.location
         let angle = atan2(location.x - 0.5, location.y - 0.5)
         
         return (angle + CGFloat(M_PI)) / (2.0 * CGFloat(M_PI))
     }
     
     private var trailSaturation: CGFloat {
-        guard let location = Audio.client?.vocoder.location else {
-            return 0.0
-        }
-        
+        let location = Audio.client.vocoder.location
         let distance = hypot(location.x - 0.5, location.y - 0.5)
         
         return distance * 2.0

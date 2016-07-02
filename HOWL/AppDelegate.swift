@@ -15,24 +15,24 @@ import AudioToolbox
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        AKSettings.shared().audioInputEnabled = true
-        AKSettings.shared().playbackWhileMuted = true
-        AKSettings.shared().defaultToSpeaker = false
+        AKSettings.audioInputEnabled = true
+        AKSettings.playbackWhileMuted = true
+        AKSettings.defaultToSpeaker = false
         
-        Audio.start()
-        Audiobus.start()
+        Audio.client.start()
+//        Audiobus.start()
         
         return true
     }
     
     func applicationWillEnterForeground(application: UIApplication) {
-        Audio.start()
+//        Audio.start()
     }
     
     func applicationDidEnterBackground(application: UIApplication) {
-        if (Audiobus.client?.isConnected == false && Settings.sustained == false) {
-            Audio.stop()
-        }
+//        if (Audiobus.client?.isConnected == false && Settings.sustained == false) {
+//            Audio.stop()
+//        }
     }
 
 }
