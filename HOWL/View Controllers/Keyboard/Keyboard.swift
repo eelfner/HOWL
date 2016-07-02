@@ -34,15 +34,15 @@ class Keyboard {
     }
     
     func numberOfKeysInRow(row: Int) -> Int {
-        return rowIsOffset(row) ? width : height + 1
+        return self.row(isOffset: row) ? width : height + 1
     }
     
     // MARK: - Keys
     
-    func keyAtIndex(index: Int, inRow row: Int) -> Key? {
-        if let coordinates = coordinatesForIndex(index, inRow: row) {
-            let pitch = pitchForCoordinates(coordinates)
-            let path = pathForCoordinates(coordinates)
+    func key(atIndex index: Int, inRow row: Int) -> Key? {
+        if let coordinates = self.coordinates(forIndex: index, inRow: row) {
+            let pitch = self.pitch(forCoordinates: coordinates)
+            let path = self.path(forCoordinates: coordinates)
             
             return Key(withPitch: pitch, path: path, coordinates: coordinates)
         }
@@ -50,10 +50,10 @@ class Keyboard {
         return nil
     }
     
-    func keyAtLocation(location: CGPoint) -> Key? {
+    func key(atLocation location: CGPoint) -> Key? {
         for row in 0..<numberOfRows() {
             for index in 0..<numberOfKeysInRow(row) {
-                if let key = keyAtIndex(index, inRow: row) where key.path.containsPoint(location) {
+                if let key = key(atIndex: index, inRow: row) where key.path.containsPoint(location) {
                     return key
                 }
             }
@@ -64,12 +64,12 @@ class Keyboard {
     
     // MARK: - Keyboard coordinates
     
-    private func coordinatesForIndex(index: Int, inRow row: Int) -> KeyCoordinates? {
+    private func coordinates(forIndex index: Int, inRow row: Int) -> KeyCoordinates? {
         if row >= numberOfRows() || index >= numberOfKeysInRow(row) {
             return nil
         }
         
-        let x = rowIsOffset(row) ? index * 2 + 1 : index * 2
+        let x = self.row(isOffset: row) ? index * 2 + 1 : index * 2
         let y = row
         
         let verticalOffset = height - y
@@ -81,7 +81,7 @@ class Keyboard {
         return KeyCoordinates(left: Int(left), right: Int(right))
     }
     
-    private func rowIsOffset(row: Int) -> Bool {
+    private func row(isOffset row: Int) -> Bool {
         if width.parity == height.parity {
             return row.isOdd
         } else {
@@ -91,12 +91,12 @@ class Keyboard {
     
     // MARK: - Transforms
     
-    private func pitchForCoordinates(coordinates: KeyCoordinates) -> Pitch {
+    private func pitch(forCoordinates coordinates: KeyCoordinates) -> Pitch {
         return Pitch(number: centerPitch.number + coordinates.left * leftInterval + coordinates.right * rightInterval)
     }
     
-    private func pathForCoordinates(coordinates: KeyCoordinates) -> UIBezierPath {
-        let location = locationForCoordinates(coordinates)
+    private func path(forCoordinates coordinates: KeyCoordinates) -> UIBezierPath {
+        let location = self.location(forCoordinates: coordinates)
         
         let horizontalKeyRadius = 1.0 / CGFloat(width) / 2.0
         let verticalKeyRadius = 1.0 / CGFloat(height) / 2.0
@@ -110,7 +110,7 @@ class Keyboard {
         }
     }
     
-    private func locationForCoordinates(coordinates: KeyCoordinates) -> CGPoint {
+    private func location(forCoordinates coordinates: KeyCoordinates) -> CGPoint {
         let horizontalKeyRadius = 1.0 / CGFloat(width) / 2.0
         let verticalKeyRadius = 1.0 / CGFloat(height) / 2.0
         

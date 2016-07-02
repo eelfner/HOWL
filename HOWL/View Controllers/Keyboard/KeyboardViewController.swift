@@ -67,7 +67,7 @@ class KeyboardViewController: UIViewController {
     
     func updateSynthesizer() {
         notes.keys.forEach { touch in
-            if let key = keyForTouch(touch) {
+            if let key = key(forTouch: touch) {
                 updateNote(forTouch: touch, withKey: key)
             } else {
                 stopNote(forTouch: touch)
@@ -77,7 +77,7 @@ class KeyboardViewController: UIViewController {
     
     func reloadSynthesizer() {
         notes.keys.forEach { touch in
-            if let key = keyForTouch(touch) {
+            if let key = key(forTouch: touch) {
                 stopNote(forTouch: touch)
                 playNote(forTouch: touch, withKey: key)
             } else {
@@ -221,14 +221,14 @@ extension KeyboardViewController: KeyboardViewLayoutDelegate {
 extension KeyboardViewController: MultitouchGestureRecognizerDelegate {
     
     func multitouchGestureRecognizer(gestureRecognizer: MultitouchGestureRecognizer, touchDidBegin touch: UITouch) {
-        if let key = keyForTouch(touch) {
+        if let key = key(forTouch: touch) {
             playNote(forTouch: touch, withKey: key)
         }
         reloadView()
     }
     
     func multitouchGestureRecognizer(gestureRecognizer: MultitouchGestureRecognizer, touchDidMove touch: UITouch) {
-        if let key = keyForTouch(touch) {
+        if let key = key(forTouch: touch) {
             updateNote(forTouch: touch, withKey: key)
         } else {
             stopNote(forTouch: touch)
@@ -248,7 +248,7 @@ extension KeyboardViewController: MultitouchGestureRecognizerDelegate {
     
     // MARK: Private getters
     
-    private func keyForTouch(touch: UITouch) -> Key? {
+    private func key(forTouch touch: UITouch) -> Key? {
         guard let keyboardView = keyboardView else {
             return nil
         }
