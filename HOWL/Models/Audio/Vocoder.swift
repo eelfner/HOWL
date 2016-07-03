@@ -7,16 +7,12 @@
 //
 
 import AudioKit
+import Lerp
 import Persistable
 
 class Vocoder: AKNode {
     
     // MARK: - Properties
-    
-    let topLeftFrequencies: [Float] = [844, 1656, 2437, 3704] // /æ/
-    let topRightFrequencies: [Float] = [768, 1333, 2522, 3687] // /α/
-    let bottomLeftFrequencies: [Float] = [324, 2985, 3329, 3807] // /i/
-    let bottomRightFrequencies: [Float] = [378, 997, 2343, 3357] // /u/
     
 //    var inputAmplitude = AKInstrumentProperty(value: 0.0)
     
@@ -34,12 +30,21 @@ class Vocoder: AKNode {
     var lfoYDepth = Persistent(value: 0.0, key: "vocoderLfoYDepth")
     var lfoYRate = Persistent(value: 0.0, key: "vocoderLfoYRate")
     
-    var formantsFrequency = Persistent(value: 1.0, key: "vocoderFormantsFrequency")
-    var formantsBandwidth = Persistent(value: 1.0, key: "vocoderFormantsBandwidth")
+    var formantsFrequency = Persistent(value: 1.0, key: "vocoderFormantsFrequency") {
+        didSet {
+            print(formants(atLocation: location))
+        }
+    }
+    
+    var formantsBandwidth = Persistent(value: 1.0, key: "vocoderFormantsBandwidth") {
+        didSet {
+            print(formants(atLocation: location))
+        }
+    }
     
     var location: CGPoint = CGPoint(x: 0.5, y: 0.5) {
         didSet {
-            
+            print(formants(atLocation: location))
         }
     }
     
@@ -47,16 +52,61 @@ class Vocoder: AKNode {
     
     private let mixer: AKMixer
     
+//    private let lfoX: AKOperation
+//    private let lfoY: AKOperation
+    
+//    private let filter1: AKLowPassFilter
+//    private let filter2: AKLowPassFilter
+//    private let filter3: AKLowPassFilter
+//    private let filter4: AKLowPassFilter
+    
     // MARK: - Initialization
     
     init(withInput input: AKNode) {
         self.mixer = AKMixer(input)
         self.mixer.stop()
         
+//        self.lfoX = AKOperation.sineWave().scale(minimum: -0.5, maximum: 0.5)
+//        self.lfoY = AKOperation.sineWave().scale(minimum: -0.5, maximum: 0.5)
+        
+//        self.filter1 = AKLowPassFilter(self.mixer, cutoffFrequency: 378.0, resonance: 12.0)
+//        self.filter2 = AKLowPassFilter(self.filter1, cutoffFrequency: 997.0, resonance: 12.0)
+//        self.filter3 = AKLowPassFilter(self.filter2, cutoffFrequency: 2343.0, resonance: 12.0)
+//        self.filter4 = AKLowPassFilter(self.filter3, cutoffFrequency: 3357.0, resonance: 12.0)
+        
         super.init()
         
         self.avAudioNode = self.mixer.avAudioNode
         input.addConnectionPoint(self)
+    }
+    
+    // MARK: - Formant calculations
+    
+    private typealias Formant = (frequency: Double, bandwidth: Double)
+    
+    private let topLeftFrequencies = [844.0, 1656.0, 2437.0, 3704.0] // /æ/
+    private let topRightFrequencies = [768.0, 1333.0, 2522.0, 3687.0] // /α/
+    private let bottomLeftFrequencies = [324.0, 2985.0, 3329.0, 3807.0] // /i/
+    private let bottomRightFrequencies = [378.0, 997.0, 2343.0, 3357.0] // /u/
+    
+    private func formants(atLocation location: CGPoint) -> [Formant] {
+        let topFrequencies = zip(topLeftFrequencies, topRightFrequencies).map { topLeftFrequency, topRightFrequency in
+            return Double(location.x).lerp(min: topLeftFrequency, max: topRightFrequency)
+        }
+        
+        let bottomFrequencies = zip(bottomLeftFrequencies, bottomRightFrequencies).map { bottomLeftFrequency, bottomRightFrequency in
+            return Double(location.x).lerp(min: bottomLeftFrequency, max: bottomRightFrequency)
+        }
+        
+        let frequencies = zip(topFrequencies, bottomFrequencies).map { topFrequency, bottomFrequency in
+            return Double(location.y).lerp(min: topFrequency, max: bottomFrequency)
+        }
+        
+        return frequencies.map { frequency in
+            let frequency = frequency * formantsFrequency.value
+            let bandwidth = (frequency * 0.02 + 50.0) * formantsBandwidth.value
+            return (frequency: frequency, bandwidth: bandwidth)
+        }
     }
 
 }
