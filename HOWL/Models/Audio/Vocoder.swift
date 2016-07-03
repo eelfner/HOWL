@@ -11,6 +11,8 @@ import Persistable
 
 class Vocoder: AKNode {
     
+    // MARK: - Properties
+    
     let topLeftFrequencies: [Float] = [844, 1656, 2437, 3704] // /æ/
     let topRightFrequencies: [Float] = [768, 1333, 2522, 3687] // /α/
     let bottomLeftFrequencies: [Float] = [324, 2985, 3329, 3807] // /i/
@@ -47,6 +49,8 @@ class Vocoder: AKNode {
             
         }
     }
+    
+    // MARK: - Nodes
     
     // MARK: - Initialization
     

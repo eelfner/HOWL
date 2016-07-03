@@ -11,6 +11,8 @@ import Persistable
 
 class Synthesizer: AKNode {
     
+    // MARK: - Properties
+    
     var vibratoWaveform = Persistent(value: 0.0, key: "synthesizerVibratoWaveform")
     var vibratoDepth = Persistent(value: 0.0, key: "synthesizerVibratoDepth")
     var vibratoRate = Persistent(value: 0.0, key: "synthesizerVibratoRate")
@@ -23,6 +25,8 @@ class Synthesizer: AKNode {
     var envelopeDecay = Persistent(value: 0.002, key: "synthesizerEnvelopeDecay")
     var envelopeSustain = Persistent(value: 1.0, key: "synthesizerEnvelopeSustain")
     var envelopeRelease = Persistent(value: 0.002, key: "synthesizerEnvelopeRelease")
+    
+    // MARK: - Nodes
     
     // MARK: - Initialization
     

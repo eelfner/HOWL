@@ -36,15 +36,15 @@ class Master: AKNode {
     // MARK: - Initialization
     
     init(withInput input: AKNode) {
-        bitcrush = AKBitCrusher(input, bitDepth: 24.0, sampleRate: 4000.0)
-        bitcrushMix = AKDryWetMixer(input, bitcrush, balance: effectsBitcrush.value)
+        self.bitcrush = AKBitCrusher(input, bitDepth: 24.0, sampleRate: 4000.0)
+        self.bitcrushMix = AKDryWetMixer(input, self.bitcrush, balance: self.effectsBitcrush.value)
         
-        reverb = AKCostelloReverb(bitcrushMix, feedback: 0.75, cutoffFrequency: 16000.0)
-        reverbMix = AKDryWetMixer(bitcrushMix, reverb, balance: effectsReverb.value)
+        self.reverb = AKCostelloReverb(self.bitcrushMix, feedback: 0.75, cutoffFrequency: 16000.0)
+        self.reverbMix = AKDryWetMixer(self.bitcrushMix, self.reverb, balance: self.effectsReverb.value)
         
         super.init()
         
-        avAudioNode = reverbMix.avAudioNode
+        self.avAudioNode = self.reverbMix.avAudioNode
         input.addConnectionPoint(self)
     }
     
