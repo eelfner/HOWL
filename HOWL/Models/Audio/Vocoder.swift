@@ -36,9 +36,17 @@ class Vocoder: AKNode {
     var formantsFrequency = Persistent(value: 1.0, key: "vocoderFormantsFrequency")
     var formantsBandwidth = Persistent(value: 1.0, key: "vocoderFormantsBandwidth")
     
-    var enabled: Bool = false
+    var enabled: Bool = false {
+        didSet {
+            
+        }
+    }
     
-    var location: CGPoint = CGPoint(x: 0.5, y: 0.5)
+    var location: CGPoint = CGPoint(x: 0.5, y: 0.5) {
+        didSet {
+            
+        }
+    }
     
     // MARK: - Initialization
     

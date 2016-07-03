@@ -11,17 +11,40 @@ import Persistable
 
 class Master: AKNode {
     
-    var effectsBitcrush = Persistent(value: 0.0, key: "masterEffectsBitcrush")
-    var effectsReverb = Persistent(value: 0.0, key: "masterEffectsReverb")
+    // MARK: - Properties
+    
+    var effectsBitcrush = Persistent(value: 0.0, key: "masterEffectsBitcrush") {
+        didSet {
+            bitcrushMix.balance = effectsBitcrush.value
+        }
+    }
+    
+    var effectsReverb = Persistent(value: 0.0, key: "masterEffectsReverb") {
+        didSet {
+            reverbMix.balance = effectsReverb.value
+        }
+    }
+    
+    // MARK: - Nodes
+    
+    private let bitcrush: AKBitCrusher
+    private let bitcrushMix: AKDryWetMixer
+    
+    private let reverb: AKCostelloReverb
+    private let reverbMix: AKDryWetMixer
     
     // MARK: - Initialization
     
     init(withInput input: AKNode) {
-        let mix = AKMixer(input, input)
+        bitcrush = AKBitCrusher(input, bitDepth: 24.0, sampleRate: 4000.0)
+        bitcrushMix = AKDryWetMixer(input, bitcrush, balance: effectsBitcrush.value)
+        
+        reverb = AKCostelloReverb(bitcrushMix, feedback: 0.75, cutoffFrequency: 16000.0)
+        reverbMix = AKDryWetMixer(bitcrushMix, reverb, balance: effectsReverb.value)
         
         super.init()
         
-        self.avAudioNode = mix.avAudioNode
+        avAudioNode = reverbMix.avAudioNode
         input.addConnectionPoint(self)
     }
     
