@@ -18,7 +18,6 @@ class Vocoder: AKNode {
     let bottomLeftFrequencies: [Float] = [324, 2985, 3329, 3807] // /i/
     let bottomRightFrequencies: [Float] = [378, 997, 2343, 3357] // /u/
     
-//    var amplitude = AKInstrumentProperty(value: 0.0)
 //    var inputAmplitude = AKInstrumentProperty(value: 0.0)
     
     var xIn = Persistent(value: 0.5, key: "vocoderXIn")
@@ -38,12 +37,6 @@ class Vocoder: AKNode {
     var formantsFrequency = Persistent(value: 1.0, key: "vocoderFormantsFrequency")
     var formantsBandwidth = Persistent(value: 1.0, key: "vocoderFormantsBandwidth")
     
-    var enabled: Bool = false {
-        didSet {
-            
-        }
-    }
-    
     var location: CGPoint = CGPoint(x: 0.5, y: 0.5) {
         didSet {
             
@@ -52,15 +45,34 @@ class Vocoder: AKNode {
     
     // MARK: - Nodes
     
+    private let mixer: AKMixer
+    
     // MARK: - Initialization
     
     init(withInput input: AKNode) {
-        let mix = AKMixer(input, input)
+        self.mixer = AKMixer(input)
+        self.mixer.stop()
         
         super.init()
         
-        self.avAudioNode = mix.avAudioNode
+        self.avAudioNode = self.mixer.avAudioNode
         input.addConnectionPoint(self)
     }
 
+}
+
+extension Vocoder: AKToggleable {
+    
+    var isStarted: Bool {
+        return mixer.isStarted
+    }
+    
+    func start() {
+        mixer.start()
+    }
+    
+    func stop() {
+        mixer.stop()
+    }
+    
 }

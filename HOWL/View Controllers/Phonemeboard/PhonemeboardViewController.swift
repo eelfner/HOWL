@@ -46,16 +46,16 @@ class PhonemeboardViewController: UIViewController {
     
     func reloadVocoder() {
         guard let location = locationForTouches(multitouchGestureRecognizer.touches) else {
-            Audio.client.vocoder.enabled = false
+            Audio.client.vocoder.stop()
             return
         }
         
-        Audio.client.vocoder.enabled = true
+        Audio.client.vocoder.start()
         Audio.client.vocoder.location = location
     }
     
     func stopVocoder() {
-        Audio.client.vocoder.enabled = false
+        Audio.client.vocoder.stop()
     }
     
     func reloadView() {
