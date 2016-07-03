@@ -23,12 +23,20 @@ class Vocoder: AKNode {
 //    var yOut = AKInstrumentProperty(value: 0.5)
     
     var lfoXShape = Persistent(value: 0.25, key: "vocoderLfoXShape")
+    
     var lfoXDepth = Persistent(value: 0.0, key: "vocoderLfoXDepth")
+    
     var lfoXRate = Persistent(value: 0.0, key: "vocoderLfoXRate")
     
     var lfoYShape = Persistent(value: 0.25, key: "vocoderLfoYShape")
+    
     var lfoYDepth = Persistent(value: 0.0, key: "vocoderLfoYDepth")
-    var lfoYRate = Persistent(value: 0.0, key: "vocoderLfoYRate")
+    
+    var lfoYRate = Persistent(value: 0.0, key: "vocoderLfoYRate") {
+        didSet {
+            print(formants(atLocation: location))
+        }
+    }
     
     var formantsFrequency = Persistent(value: 1.0, key: "vocoderFormantsFrequency") {
         didSet {
@@ -52,13 +60,13 @@ class Vocoder: AKNode {
     
     private let mixer: AKMixer
     
-//    private let lfoX: AKOperation
-//    private let lfoY: AKOperation
-    
-//    private let filter1: AKLowPassFilter
-//    private let filter2: AKLowPassFilter
-//    private let filter3: AKLowPassFilter
-//    private let filter4: AKLowPassFilter
+//    private let lfoX: AKOperationEffect
+//    private let lfoY: AKOperationEffect
+//    
+//    private let filter1: AKOperationEffect
+//    private let filter2: AKOperationEffect
+//    private let filter3: AKOperationEffect
+//    private let filter4: AKOperationEffect
     
     // MARK: - Initialization
     
@@ -66,18 +74,39 @@ class Vocoder: AKNode {
         self.mixer = AKMixer(input)
         self.mixer.stop()
         
-//        self.lfoX = AKOperation.sineWave().scale(minimum: -0.5, maximum: 0.5)
-//        self.lfoY = AKOperation.sineWave().scale(minimum: -0.5, maximum: 0.5)
+//        self.lfoX = AKOperation.sineWave(frequency: self.lfoXRate.value).scale(minimum: -0.5, maximum: 0.5)
+//        self.lfoY = AKOperation.sineWave(frequency: self.lfoYRate.value).scale(minimum: -0.5, maximum: 0.5)
+//        
+//        self.filter1 = AKOperation.input.modalResonanceFilter(frequency: 324.0 * self.lfoX, qualityFactor: 50.0)
+//        self.filter2 = AKOperation.input.modalResonanceFilter(frequency: 2985.0 * self.lfoX, qualityFactor: 50.0)
+//        self.filter3 = AKOperation.input.modalResonanceFilter(frequency: 3329.0 * self.lfoX, qualityFactor: 50.0)
+//        self.filter4 = AKOperation.input.modalResonanceFilter(frequency: 3807.0 * self.lfoX, qualityFactor: 50.0)
+//
+//        let effect1 = AKOperationEffect(self.mixer, operation: self.filter1)
+//        let effect2 = AKOperationEffect(effect1, operation: self.filter2)
+//        let effect3 = AKOperationEffect(effect2, operation: self.filter3)
+//        let effect4 = AKOperationEffect(effect3, operation: self.filter4)
         
-//        self.filter1 = AKLowPassFilter(self.mixer, cutoffFrequency: 378.0, resonance: 12.0)
-//        self.filter2 = AKLowPassFilter(self.filter1, cutoffFrequency: 997.0, resonance: 12.0)
-//        self.filter3 = AKLowPassFilter(self.filter2, cutoffFrequency: 2343.0, resonance: 12.0)
-//        self.filter4 = AKLowPassFilter(self.filter3, cutoffFrequency: 3357.0, resonance: 12.0)
+//        self.filter1 = AKLowPassFilter(self.mixer, cutoffFrequency: 378.0, resonance: 40.0)
+//        self.filter2 = AKLowPassFilter(self.filter1, cutoffFrequency: 997.0, resonance: 40.0)
+//        self.filter3 = AKLowPassFilter(self.filter2, cutoffFrequency: 2343.0, resonance: 40.0)
+//        self.filter4 = AKLowPassFilter(self.filter3, cutoffFrequency: 3357.0, resonance: 40.0)
+        
+//        self.filter1.start()
+//        self.filter2.start()
+//        self.filter3.start()
+//        self.filter4.start()
         
         super.init()
         
         self.avAudioNode = self.mixer.avAudioNode
         input.addConnectionPoint(self)
+    }
+    
+    // MARK: - Setters
+    
+    private func setFormants(formants: [Formant]) {
+        
     }
     
     // MARK: - Formant calculations
