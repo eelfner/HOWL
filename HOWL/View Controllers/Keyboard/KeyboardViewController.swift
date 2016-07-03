@@ -159,7 +159,7 @@ extension KeyboardViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("keyboardViewCell", forIndexPath: indexPath) as! KeyboardViewCell
         let layer = cell.layer as! CAShapeLayer
         
-        guard let key = keyboard.keyAtIndex(indexPath.item, inRow: indexPath.section) else {
+        guard let key = keyboard.key(atIndex: indexPath.item, inRow: indexPath.section) else {
             return cell
         }
         
@@ -204,7 +204,7 @@ extension KeyboardViewController: UICollectionViewDataSource {
 extension KeyboardViewController: KeyboardViewLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, layout: UICollectionViewLayout, pathForItemAtIndexPath indexPath: NSIndexPath) -> UIBezierPath? {
-        guard let key = keyboard.keyAtIndex(indexPath.item, inRow: indexPath.section) else {
+        guard let key = keyboard.key(atIndex: indexPath.item, inRow: indexPath.section) else {
             return nil
         }
         
@@ -255,7 +255,7 @@ extension KeyboardViewController: MultitouchGestureRecognizerDelegate {
         
         let location = touch.locationInView(keyboardView).ilerp(rect: keyboardView.bounds)
         
-        return keyboard.keyAtLocation(location)
+        return keyboard.key(atLocation: location)
     }
     
 }

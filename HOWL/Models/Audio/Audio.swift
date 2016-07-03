@@ -12,18 +12,22 @@ class Audio {
     
     static let client = Audio()
     
-    let oscillator: AKOscillator
-    
-    let synthesizer = Synthesizer()
-    let vocoder = Vocoder()
-    let master = Master()
+    let synthesizer: Synthesizer
+    let vocoder: Vocoder
+    let master: Master
     
     init() {
-        self.oscillator = AKOscillator(waveform: AKTable(.Triangle, size: 2048))
-        self.oscillator.amplitude = 1.0
-        self.oscillator.frequency = 256.0
+        self.synthesizer = Synthesizer()
         
-        AudioKit.output = oscillator
+        let oscillator = AKOscillator(waveform: AKTable(.Sawtooth, size: 2048))
+        oscillator.amplitude = 0.25
+        oscillator.frequency = 256.0
+        oscillator.start()
+        
+        self.vocoder = Vocoder(withInput: oscillator)
+        self.master = Master(withInput: self.vocoder)
+        
+        AudioKit.output = self.master
     }
     
     static let didStartNotification = "AudioDidStartNotification"
@@ -31,16 +35,12 @@ class Audio {
     func start() {
         AudioKit.start()
         
-        oscillator.start()
-        
         NSNotificationCenter.defaultCenter().postNotificationName(Audio.didStartNotification, object: nil, userInfo: nil)
     }
     
     static let didStopNotification = "AudioDidStartNotification"
     
     func stop() {
-        oscillator.stop()
-        
         AudioKit.stop()
         
         NSNotificationCenter.defaultCenter().postNotificationName(Audio.didStopNotification, object: nil, userInfo: nil)

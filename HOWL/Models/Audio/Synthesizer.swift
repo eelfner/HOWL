@@ -9,7 +9,7 @@
 import AudioKit
 import Persistable
 
-class Synthesizer {
+class Synthesizer: AKNode {
     
     var vibratoWaveform = Persistent(value: 0.0, key: "synthesizerVibratoWaveform")
     var vibratoDepth = Persistent(value: 0.0, key: "synthesizerVibratoDepth")
@@ -23,6 +23,18 @@ class Synthesizer {
     var envelopeDecay = Persistent(value: 0.002, key: "synthesizerEnvelopeDecay")
     var envelopeSustain = Persistent(value: 1.0, key: "synthesizerEnvelopeSustain")
     var envelopeRelease = Persistent(value: 0.002, key: "synthesizerEnvelopeRelease")
+    
+    // MARK: - Initialization
+    
+    override init() {
+        let oscillator = AKOscillator(waveform: AKTable(.Sawtooth, size: 2048))
+        oscillator.amplitude = 1.0
+        oscillator.frequency = 256.0
+        
+        super.init()
+        
+        self.avAudioNode = oscillator.avAudioNode
+    }
     
     // MARK: - Note creation
     

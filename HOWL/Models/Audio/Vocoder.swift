@@ -9,7 +9,12 @@
 import AudioKit
 import Persistable
 
-class Vocoder {
+class Vocoder: AKNode {
+    
+    let topLeftFrequencies: [Float] = [844, 1656, 2437, 3704] // /æ/
+    let topRightFrequencies: [Float] = [768, 1333, 2522, 3687] // /α/
+    let bottomLeftFrequencies: [Float] = [324, 2985, 3329, 3807] // /i/
+    let bottomRightFrequencies: [Float] = [378, 997, 2343, 3357] // /u/
     
 //    var amplitude = AKInstrumentProperty(value: 0.0)
 //    var inputAmplitude = AKInstrumentProperty(value: 0.0)
@@ -34,4 +39,16 @@ class Vocoder {
     var enabled: Bool = false
     
     var location: CGPoint = CGPoint(x: 0.5, y: 0.5)
+    
+    // MARK: - Initialization
+    
+    init(withInput input: AKNode) {
+        let mix = AKMixer(input, input)
+        
+        super.init()
+        
+        self.avAudioNode = mix.avAudioNode
+        input.addConnectionPoint(self)
+    }
+
 }
