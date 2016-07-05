@@ -10,7 +10,7 @@ import AudioKit
 import Lerp
 import Persistable
 
-class Vocoder: AKNode {
+class Vocoder: AKOperationEffect {
     
     // MARK: - Properties
     
@@ -58,11 +58,12 @@ class Vocoder: AKNode {
     
     // MARK: - Nodes
     
-    private let mixer: AKMixer
+//    private let mixer: AKMixer
     
-//    private let lfoX: AKOperationEffect
-//    private let lfoY: AKOperationEffect
-//    
+    
+    
+    
+//
 //    private let filter1: AKOperationEffect
 //    private let filter2: AKOperationEffect
 //    private let filter3: AKOperationEffect
@@ -70,13 +71,19 @@ class Vocoder: AKNode {
     
     // MARK: - Initialization
     
-    init(withInput input: AKNode) {
-        self.mixer = AKMixer(input)
-        self.mixer.stop()
+    
+    
+    convenience init(withInput input: AKNode) {
+//        self.mixer = AKMixer(input)
+//        self.mixer.stop()
+        
+        let oscillator = AKOperation.sineWave(frequency: 0.5, amplitude: 1000.0)
+        
+        let filter = AKOperation.input.lowPassButterworthFilter(cutoffFrequency: oscillator)
         
 //        self.lfoX = AKOperation.sineWave(frequency: self.lfoXRate.value).scale(minimum: -0.5, maximum: 0.5)
 //        self.lfoY = AKOperation.sineWave(frequency: self.lfoYRate.value).scale(minimum: -0.5, maximum: 0.5)
-//        
+
 //        self.filter1 = AKOperation.input.modalResonanceFilter(frequency: 324.0 * self.lfoX, qualityFactor: 50.0)
 //        self.filter2 = AKOperation.input.modalResonanceFilter(frequency: 2985.0 * self.lfoX, qualityFactor: 50.0)
 //        self.filter3 = AKOperation.input.modalResonanceFilter(frequency: 3329.0 * self.lfoX, qualityFactor: 50.0)
@@ -97,10 +104,9 @@ class Vocoder: AKNode {
 //        self.filter3.start()
 //        self.filter4.start()
         
-        super.init()
+        self.init(input, operation: filter)
         
-        self.avAudioNode = self.mixer.avAudioNode
-        input.addConnectionPoint(self)
+//        super.init(input, operation: filter)
     }
     
     // MARK: - Setters
@@ -140,18 +146,18 @@ class Vocoder: AKNode {
 
 }
 
-extension Vocoder: AKToggleable {
-    
-    var isStarted: Bool {
-        return mixer.isStarted
-    }
-    
-    func start() {
-        mixer.start()
-    }
-    
-    func stop() {
-        mixer.stop()
-    }
-    
-}
+//extension Vocoder: AKToggleable {
+//    
+//    var isStarted: Bool {
+//        return mixer.isStarted
+//    }
+//    
+//    func start() {
+//        mixer.start()
+//    }
+//    
+//    func stop() {
+//        mixer.stop()
+//    }
+//    
+//}
