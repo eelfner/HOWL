@@ -10,7 +10,7 @@ import AudioKit
 import Lerp
 import Persistable
 
-class Vocoder: AKOperationEffect {
+class Vocoder: AKNode {
     
     // MARK: - Properties
     
@@ -58,55 +58,24 @@ class Vocoder: AKOperationEffect {
     
     // MARK: - Nodes
     
-//    private let mixer: AKMixer
-    
-    
-    
-    
-//
-//    private let filter1: AKOperationEffect
-//    private let filter2: AKOperationEffect
-//    private let filter3: AKOperationEffect
-//    private let filter4: AKOperationEffect
+    private let mixer: AKMixer
     
     // MARK: - Initialization
     
-    
-    
-    convenience init(withInput input: AKNode) {
-//        self.mixer = AKMixer(input)
-//        self.mixer.stop()
+    init(withInput input: AKNode) {
+        self.mixer = AKMixer(input)
+        self.mixer.stop()
         
         let oscillator = AKOperation.sineWave(frequency: 0.5, amplitude: 1000.0)
         
         let filter = AKOperation.input.lowPassButterworthFilter(cutoffFrequency: oscillator)
         
-//        self.lfoX = AKOperation.sineWave(frequency: self.lfoXRate.value).scale(minimum: -0.5, maximum: 0.5)
-//        self.lfoY = AKOperation.sineWave(frequency: self.lfoYRate.value).scale(minimum: -0.5, maximum: 0.5)
-
-//        self.filter1 = AKOperation.input.modalResonanceFilter(frequency: 324.0 * self.lfoX, qualityFactor: 50.0)
-//        self.filter2 = AKOperation.input.modalResonanceFilter(frequency: 2985.0 * self.lfoX, qualityFactor: 50.0)
-//        self.filter3 = AKOperation.input.modalResonanceFilter(frequency: 3329.0 * self.lfoX, qualityFactor: 50.0)
-//        self.filter4 = AKOperation.input.modalResonanceFilter(frequency: 3807.0 * self.lfoX, qualityFactor: 50.0)
-//
-//        let effect1 = AKOperationEffect(self.mixer, operation: self.filter1)
-//        let effect2 = AKOperationEffect(effect1, operation: self.filter2)
-//        let effect3 = AKOperationEffect(effect2, operation: self.filter3)
-//        let effect4 = AKOperationEffect(effect3, operation: self.filter4)
+        let effect = AKOperationEffect(self.mixer, operation: filter)
         
-//        self.filter1 = AKLowPassFilter(self.mixer, cutoffFrequency: 378.0, resonance: 40.0)
-//        self.filter2 = AKLowPassFilter(self.filter1, cutoffFrequency: 997.0, resonance: 40.0)
-//        self.filter3 = AKLowPassFilter(self.filter2, cutoffFrequency: 2343.0, resonance: 40.0)
-//        self.filter4 = AKLowPassFilter(self.filter3, cutoffFrequency: 3357.0, resonance: 40.0)
+        super.init()
         
-//        self.filter1.start()
-//        self.filter2.start()
-//        self.filter3.start()
-//        self.filter4.start()
-        
-        self.init(input, operation: filter)
-        
-//        super.init(input, operation: filter)
+        self.avAudioNode = effect.avAudioNode
+        input.addConnectionPoint(self.mixer)
     }
     
     // MARK: - Setters
@@ -146,18 +115,18 @@ class Vocoder: AKOperationEffect {
 
 }
 
-//extension Vocoder: AKToggleable {
-//    
-//    var isStarted: Bool {
-//        return mixer.isStarted
-//    }
-//    
-//    func start() {
-//        mixer.start()
-//    }
-//    
-//    func stop() {
-//        mixer.stop()
-//    }
-//    
-//}
+extension Vocoder: AKToggleable {
+    
+    var isStarted: Bool {
+        return mixer.isStarted
+    }
+    
+    func start() {
+        mixer.start()
+    }
+    
+    func stop() {
+        mixer.stop()
+    }
+    
+}
