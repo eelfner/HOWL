@@ -28,7 +28,7 @@ class Vocoder: AKNode {
     
     var lfoXRate = Persistent(value: 0.0, key: "vocoderLfoXRate") {
         didSet {
-            effect.parameters[0] = lfoXRate.value
+            effect.parameters[Parameters.LFOXRate.rawValue] = lfoXRate.value
         }
     }
     
@@ -66,13 +66,17 @@ class Vocoder: AKNode {
     
     private let effect: AKOperationEffect
     
+    enum Parameters: Int {
+        case LFOXRate
+    }
+    
     // MARK: - Initialization
     
     init(withInput input: AKNode) {
         self.mixer = AKMixer(input)
         self.mixer.stop()
         
-        let oscillator = AKOperation.sineWave(frequency: AKOperation.parameters(0), amplitude: 1000.0)
+        let oscillator = AKOperation.sineWave(frequency: AKOperation.parameters(Parameters.LFOXRate.rawValue), amplitude: 1000.0)
         
         let filter = AKOperation.input.lowPassButterworthFilter(cutoffFrequency: oscillator)
         
