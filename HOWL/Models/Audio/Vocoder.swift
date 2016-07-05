@@ -81,7 +81,7 @@ class Vocoder: AKNode {
         let filter = AKOperation.input.lowPassButterworthFilter(cutoffFrequency: oscillator)
         
         self.effect = AKOperationEffect(self.mixer, operation: filter)
-        self.effect.parameters = [0.0]
+        self.effect.parameters = [lfoXRate.value]
         
         super.init()
         
