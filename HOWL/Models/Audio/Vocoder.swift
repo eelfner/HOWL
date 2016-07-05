@@ -28,7 +28,7 @@ class Vocoder: AKNode {
     
     var lfoXRate = Persistent(value: 0.0, key: "vocoderLfoXRate") {
         didSet {
-            effect.parameters[Parameters.LFOXRate.rawValue] = lfoXRate.value
+            
         }
     }
     
@@ -38,25 +38,25 @@ class Vocoder: AKNode {
     
     var lfoYRate = Persistent(value: 0.0, key: "vocoderLfoYRate") {
         didSet {
-            print(formants(atLocation: location))
+            setFormants(formants(atLocation: location))
         }
     }
     
     var formantsFrequency = Persistent(value: 1.0, key: "vocoderFormantsFrequency") {
         didSet {
-            print(formants(atLocation: location))
+            setFormants(formants(atLocation: location))
         }
     }
     
     var formantsBandwidth = Persistent(value: 1.0, key: "vocoderFormantsBandwidth") {
         didSet {
-            print(formants(atLocation: location))
+            setFormants(formants(atLocation: location))
         }
     }
     
     var location: CGPoint = CGPoint(x: 0.5, y: 0.5) {
         didSet {
-            print(formants(atLocation: location))
+            setFormants(formants(atLocation: location))
         }
     }
     
@@ -64,10 +64,29 @@ class Vocoder: AKNode {
     
     private let mixer: AKMixer
     
-    private let effect: AKOperationEffect
+    private let formant1: AKOperationEffect
+    private let formant2: AKOperationEffect
+    private let formant3: AKOperationEffect
+    private let formant4: AKOperationEffect
     
     enum Parameters: Int {
         case LFOXRate
+    }
+    
+    enum Formant1Parameters: Int {
+        case CutoffFrequency
+    }
+    
+    enum Formant2Parameters: Int {
+        case CutoffFrequency
+    }
+    
+    enum Formant3Parameters: Int {
+        case CutoffFrequency
+    }
+    
+    enum Formant4Parameters: Int {
+        case CutoffFrequency
     }
     
     // MARK: - Initialization
@@ -76,23 +95,40 @@ class Vocoder: AKNode {
         self.mixer = AKMixer(input)
         self.mixer.stop()
         
-        let oscillator = AKOperation.sineWave(frequency: AKOperation.parameters(Parameters.LFOXRate.rawValue), amplitude: 500.0)
+        let _ = AKOperation.sineWave(frequency: AKOperation.parameters(Parameters.LFOXRate.rawValue), amplitude: 500.0)
         
-        let filter = AKOperation.input.moogLadderFilter(cutoffFrequency: oscillator + 600.0, resonance: 0.5)
+//        let filter = AKOperation.input.moogLadderFilter(cutoffFrequency: oscillator + 600.0, resonance: 0.5)
         
-        self.effect = AKOperationEffect(self.mixer, operation: filter)
-        self.effect.parameters = [lfoXRate.value]
+        let filter1 = AKOperation.input.moogLadderFilter(cutoffFrequency: AKOperation.parameters(Formant1Parameters.CutoffFrequency.rawValue), resonance: 0.75)
+        let filter2 = AKOperation.input.moogLadderFilter(cutoffFrequency: AKOperation.parameters(Formant2Parameters.CutoffFrequency.rawValue), resonance: 0.75)
+        let filter3 = AKOperation.input.moogLadderFilter(cutoffFrequency: AKOperation.parameters(Formant3Parameters.CutoffFrequency.rawValue), resonance: 0.75)
+        let filter4 = AKOperation.input.moogLadderFilter(cutoffFrequency: AKOperation.parameters(Formant4Parameters.CutoffFrequency.rawValue), resonance: 0.75)
+        
+        self.formant1 = AKOperationEffect(self.mixer, operation: filter1)
+        self.formant1.parameters = [844.0]
+        
+        self.formant2 = AKOperationEffect(self.formant1, operation: filter2)
+        self.formant2.parameters = [1656.0]
+        
+        self.formant3 = AKOperationEffect(self.formant2, operation: filter3)
+        self.formant3.parameters = [2437.0]
+        
+        self.formant4 = AKOperationEffect(self.formant3, operation: filter4)
+        self.formant4.parameters = [3704.0]
         
         super.init()
         
-        self.avAudioNode = self.effect.avAudioNode
+        self.avAudioNode = self.formant4.avAudioNode
         input.addConnectionPoint(self.mixer)
     }
     
     // MARK: - Setters
     
     private func setFormants(formants: [Formant]) {
-        
+        self.formant1.parameters[Formant1Parameters.CutoffFrequency.rawValue] = formants[0].frequency
+        self.formant2.parameters[Formant2Parameters.CutoffFrequency.rawValue] = formants[1].frequency
+        self.formant3.parameters[Formant3Parameters.CutoffFrequency.rawValue] = formants[2].frequency
+        self.formant4.parameters[Formant4Parameters.CutoffFrequency.rawValue] = formants[3].frequency
     }
     
     // MARK: - Formant calculations
