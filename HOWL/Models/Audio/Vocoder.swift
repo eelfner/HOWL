@@ -76,9 +76,9 @@ class Vocoder: AKNode {
         self.mixer = AKMixer(input)
         self.mixer.stop()
         
-        let oscillator = AKOperation.sineWave(frequency: AKOperation.parameters(Parameters.LFOXRate.rawValue), amplitude: 1000.0)
+        let oscillator = AKOperation.sineWave(frequency: AKOperation.parameters(Parameters.LFOXRate.rawValue), amplitude: 500.0)
         
-        let filter = AKOperation.input.lowPassButterworthFilter(cutoffFrequency: oscillator)
+        let filter = AKOperation.input.moogLadderFilter(cutoffFrequency: oscillator + 600.0, resonance: 0.5)
         
         self.effect = AKOperationEffect(self.mixer, operation: filter)
         self.effect.parameters = [lfoXRate.value]
