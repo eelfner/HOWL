@@ -26,7 +26,11 @@ class Vocoder: AKNode {
     
     var lfoXDepth = Persistent(value: 0.0, key: "vocoderLfoXDepth")
     
-    var lfoXRate = Persistent(value: 0.0, key: "vocoderLfoXRate")
+    var lfoXRate = Persistent(value: 0.0, key: "vocoderLfoXRate") {
+        didSet {
+            effect.parameters[0] = lfoXRate.value
+        }
+    }
     
     var lfoYShape = Persistent(value: 0.25, key: "vocoderLfoYShape")
     
@@ -60,21 +64,24 @@ class Vocoder: AKNode {
     
     private let mixer: AKMixer
     
+    private let effect: AKOperationEffect
+    
     // MARK: - Initialization
     
     init(withInput input: AKNode) {
         self.mixer = AKMixer(input)
         self.mixer.stop()
         
-        let oscillator = AKOperation.sineWave(frequency: 0.5, amplitude: 1000.0)
+        let oscillator = AKOperation.sineWave(frequency: AKOperation.parameters(0), amplitude: 1000.0)
         
         let filter = AKOperation.input.lowPassButterworthFilter(cutoffFrequency: oscillator)
         
-        let effect = AKOperationEffect(self.mixer, operation: filter)
+        self.effect = AKOperationEffect(self.mixer, operation: filter)
+        self.effect.parameters = [0.0]
         
         super.init()
         
-        self.avAudioNode = effect.avAudioNode
+        self.avAudioNode = self.effect.avAudioNode
         input.addConnectionPoint(self.mixer)
     }
     
