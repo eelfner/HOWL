@@ -133,9 +133,11 @@ class Vocoder: AKNode {
         self.formant4 = AKOperationEffect(self.formant3, operation: filter4)
         self.formant4.parameters = [3704.0, 100.0]
         
+        let balance = AKBalancer(self.formant4, comparator: self.mixer)
+        
         super.init()
         
-        self.avAudioNode = self.formant4.avAudioNode
+        self.avAudioNode = balance.avAudioNode
         input.addConnectionPoint(self.mixer)
     }
     

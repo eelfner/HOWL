@@ -33,7 +33,7 @@ class Synthesizer: AKNode {
     override init() {
         let oscillator = AKOscillator(waveform: AKTable(.Sawtooth, size: 2048))
         oscillator.amplitude = 1.0
-        oscillator.frequency = 120.0
+        oscillator.frequency = 60.0
         
         super.init()
         

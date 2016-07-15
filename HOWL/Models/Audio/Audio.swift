@@ -21,7 +21,7 @@ class Audio {
         
         let oscillator = AKOscillator(waveform: AKTable(.Sawtooth, size: 2048))
         oscillator.amplitude = 0.25
-        oscillator.frequency = 256.0
+        oscillator.frequency = 120.0
         oscillator.start()
         
         self.vocoder = Vocoder(withInput: oscillator)
