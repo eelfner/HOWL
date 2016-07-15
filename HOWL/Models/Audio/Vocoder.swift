@@ -64,33 +64,13 @@ class Vocoder: AKNode {
     
     private let mixer: AKMixer
     
-    private let formant1: AKOperationEffect
-    private let formant2: AKOperationEffect
-    private let formant3: AKOperationEffect
-    private let formant4: AKOperationEffect
+    private let formant1: ResonantFilter
+    private let formant2: ResonantFilter
+    private let formant3: ResonantFilter
+    private let formant4: ResonantFilter
     
     enum Parameters: Int {
         case LFOXRate
-    }
-    
-    enum Formant1Parameters: Int {
-        case Frequency
-        case Bandwidth
-    }
-    
-    enum Formant2Parameters: Int {
-        case Frequency
-        case Bandwidth
-    }
-    
-    enum Formant3Parameters: Int {
-        case Frequency
-        case Bandwidth
-    }
-    
-    enum Formant4Parameters: Int {
-        case Frequency
-        case Bandwidth
     }
     
     // MARK: - Initialization
@@ -101,37 +81,10 @@ class Vocoder: AKNode {
         
         let _ = AKOperation.sineWave(frequency: AKOperation.parameters(Parameters.LFOXRate.rawValue), amplitude: 500.0)
         
-        let filter1 = AKOperation.input.resonantFilter(
-            frequency: AKOperation.parameters(Formant1Parameters.Frequency.rawValue),
-            bandwidth: AKOperation.parameters(Formant1Parameters.Bandwidth.rawValue)
-        )
-        
-        let filter2 = AKOperation.input.resonantFilter(
-            frequency: AKOperation.parameters(Formant2Parameters.Frequency.rawValue),
-            bandwidth: AKOperation.parameters(Formant2Parameters.Bandwidth.rawValue)
-        )
-        
-        let filter3 = AKOperation.input.resonantFilter(
-            frequency: AKOperation.parameters(Formant3Parameters.Frequency.rawValue),
-            bandwidth: AKOperation.parameters(Formant3Parameters.Bandwidth.rawValue)
-        )
-        
-        let filter4 = AKOperation.input.resonantFilter(
-            frequency: AKOperation.parameters(Formant4Parameters.Frequency.rawValue),
-            bandwidth: AKOperation.parameters(Formant4Parameters.Bandwidth.rawValue)
-        )
-        
-        self.formant1 = AKOperationEffect(self.mixer, operation: filter1)
-        self.formant1.parameters = [844.0, 100.0]
-        
-        self.formant2 = AKOperationEffect(self.formant1, operation: filter2)
-        self.formant2.parameters = [1656.0, 100.0]
-        
-        self.formant3 = AKOperationEffect(self.formant2, operation: filter3)
-        self.formant3.parameters = [2437.0, 100.0]
-        
-        self.formant4 = AKOperationEffect(self.formant3, operation: filter4)
-        self.formant4.parameters = [3704.0, 100.0]
+        self.formant1 = ResonantFilter(self.mixer)
+        self.formant2 = ResonantFilter(self.formant1)
+        self.formant3 = ResonantFilter(self.formant2)
+        self.formant4 = ResonantFilter(self.formant3)
         
         let balance = AKBalancer(self.formant4, comparator: self.mixer)
         
@@ -144,17 +97,17 @@ class Vocoder: AKNode {
     // MARK: - Setters
     
     private func setFormants(formants: [Formant]) {
-        self.formant1.parameters[Formant1Parameters.Frequency.rawValue] = formants[0].frequency
-        self.formant1.parameters[Formant1Parameters.Bandwidth.rawValue] = formants[0].bandwidth
+        self.formant1.frequency = formants[0].frequency
+        self.formant1.bandwidth = formants[0].bandwidth
         
-        self.formant2.parameters[Formant2Parameters.Frequency.rawValue] = formants[1].frequency
-        self.formant2.parameters[Formant2Parameters.Bandwidth.rawValue] = formants[1].bandwidth
+        self.formant2.frequency = formants[1].frequency
+        self.formant2.bandwidth = formants[1].bandwidth
         
-        self.formant3.parameters[Formant3Parameters.Frequency.rawValue] = formants[2].frequency
-        self.formant3.parameters[Formant3Parameters.Bandwidth.rawValue] = formants[2].bandwidth
+        self.formant3.frequency = formants[2].frequency
+        self.formant3.bandwidth = formants[2].bandwidth
         
-        self.formant4.parameters[Formant4Parameters.Frequency.rawValue] = formants[3].frequency
-        self.formant4.parameters[Formant4Parameters.Bandwidth.rawValue] = formants[3].bandwidth
+        self.formant4.frequency = formants[3].frequency
+        self.formant4.bandwidth = formants[3].bandwidth
     }
     
     // MARK: - Formant calculations
@@ -186,6 +139,45 @@ class Vocoder: AKNode {
         }
     }
 
+}
+
+private class LFO: AKOperationEffect {
+    
+}
+
+private class ResonantFilter: AKOperationEffect {
+    
+    private enum Parameters: Int {
+        case Frequency
+        case Bandwidth
+    }
+    
+    convenience init(_ input: AKNode, frequency: Double = 1000.0, bandwidth: Double = 100.0) {
+        self.init(input, operation: AKOperation.input.resonantFilter(
+            frequency: AKOperation.parameters(Parameters.Frequency.rawValue),
+            bandwidth: AKOperation.parameters(Parameters.Bandwidth.rawValue)
+        ))
+        self.parameters = [frequency, bandwidth]
+    }
+    
+    var frequency: Double {
+        get {
+            return parameters[Parameters.Frequency.rawValue]
+        }
+        set {
+            parameters[Parameters.Frequency.rawValue] = newValue
+        }
+    }
+    
+    var bandwidth: Double {
+        get {
+            return parameters[Parameters.Bandwidth.rawValue]
+        }
+        set {
+            parameters[Parameters.Bandwidth.rawValue] = newValue
+        }
+    }
+    
 }
 
 extension Vocoder: AKToggleable {
