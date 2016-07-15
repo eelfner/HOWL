@@ -162,11 +162,6 @@ private class FilterBank: AKOperationEffect {
           formantsBandwidth: Double
         ) {
         
-        let topLeftFrequencies = [844.0, 1656.0, 2437.0, 3704.0] // /æ/
-        let topRightFrequencies = [768.0, 1333.0, 2522.0, 3687.0] // /α/
-        let bottomLeftFrequencies = [324.0, 2985.0, 3329.0, 3807.0] // /i/
-        let bottomRightFrequencies = [378.0, 997.0, 2343.0, 3357.0] // /u/
-        
         let xInParameter = AKOperation.parameters(Parameter.XIn.rawValue)
         let yInParameter = AKOperation.parameters(Parameter.YIn.rawValue)
         
@@ -196,10 +191,10 @@ private class FilterBank: AKOperationEffect {
         "(\(yOutParameter) (\(xOutParameter) 3704.0 3687.0 scale) (\(xOutParameter) 3807.0 3357.0 scale) scale) 3 'frequencies' tset" ++
         "" ++
         "\(AKOperation.input)" ++
-        "(0 'frequencies' tget) ((dup 0.02 *) 50.0 +) reson" ++
-        "(1 'frequencies' tget) ((dup 0.02 *) 50.0 +) reson" ++
-        "(2 'frequencies' tget) ((dup 0.02 *) 50.0 +) reson" ++
-        "(3 'frequencies' tget) ((dup 0.02 *) 50.0 +) reson" ++
+        "((0 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+        "((1 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+        "((2 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+        "((3 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
         "dup"
 
         self.init(input, sporth: sporth)
