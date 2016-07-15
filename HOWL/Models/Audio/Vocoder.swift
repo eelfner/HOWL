@@ -146,10 +146,6 @@ private class FilterBank: AKOperationEffect {
         case LfoYRate
         case FormantsFrequency
         case FormantsBandwidth
-        case Formant1
-        case Formant2
-        case Formant3
-        case Formant4
     }
 
     convenience init(
@@ -188,69 +184,22 @@ private class FilterBank: AKOperationEffect {
         let formantsFrequencyParameter = AKOperation.parameters(Parameter.FormantsFrequency.rawValue) + 0.01
         let formantsBandwidthParameter = AKOperation.parameters(Parameter.FormantsBandwidth.rawValue) + 0.01
         
-        let lfoX = AKOperation.sineWave(frequency: lfoXRateParameter, amplitude: lfoXDepthParameter * 0.5)
-        let lfoY = AKOperation.sineWave(frequency: lfoYRateParameter, amplitude: lfoYDepthParameter * 0.5)
-        
-        let x = xInParameter + lfoX
-        let y = yInParameter + lfoY
-        
-        let topFrequencies = zip(topLeftFrequencies, topRightFrequencies).map { topLeftFrequency, topRightFrequency in
-            return x * (topRightFrequency - topLeftFrequency) + topLeftFrequency
-        }
-        
-        let bottomFrequencies = zip(bottomLeftFrequencies, bottomRightFrequencies).map { bottomLeftFrequency, bottomRightFrequency in
-            return y * (bottomRightFrequency - bottomLeftFrequency) + bottomLeftFrequency
-        }
-        
-        let frequencies = zip(topFrequencies, bottomFrequencies).map { topFrequency, bottomFrequency in
-            return formantsBandwidthParameter * (yInParameter * (bottomFrequency - topFrequency) + topFrequency)
-        }
-        
-        let bandwidths = frequencies.map { frequency in
-            return formantsFrequencyParameter * (frequency * 0.02 + 50.0)
-        }
-        
-        let filters = zip(frequencies, bandwidths).reduce(AKOperation.input) { input, parameters in
-            let (frequency, bandwidth) = parameters
-            return input.resonantFilter(frequency: frequency, bandwidth: bandwidth)
-        }
-        
-        let filter = AKOperation.input.resonantFilter(frequency: 1000.0, bandwidth: 100.0).resonantFilter(frequency: 2000.0, bandwidth: 200.0).resonantFilter(frequency: 3000.0, bandwidth: 300.0).resonantFilter(frequency: 4000.0, bandwidth: 400.0)
-        
-//        let sporth = "\(AKOperation.input)" ++
-//                     "1000.0 100.0 reson" ++
-//                     "2000.0 200.0 reson" ++
-//                     "3000.0 300.0 reson" ++
-//                     "4000.0 400.0 reson"
-        
-        let formant1Parameter = AKOperation.parameters(Parameter.Formant1.rawValue)
-        let formant2Parameter = AKOperation.parameters(Parameter.Formant2.rawValue)
-        let formant3Parameter = AKOperation.parameters(Parameter.Formant3.rawValue)
-        let formant4Parameter = AKOperation.parameters(Parameter.Formant4.rawValue)
-        
         let sporth =
         "((\(lfoXRateParameter) (\(lfoXDepthParameter) 0.5 *) sine) \(xInParameter) +) \(Parameter.XOut.rawValue) pset" ++
         "((\(lfoYRateParameter) (\(lfoYDepthParameter) 0.5 *) sine) \(yInParameter) +) \(Parameter.YOut.rawValue) pset" ++
         "" ++
         "'frequencies' 4 zeros" ++
         "" ++
-        "(\(yOutParameter) (\(xOutParameter) 844.0 768.0 scale) \(xOutParameter) 324.0 378.0 scale) scale) 0 'frequencies' tset" ++
-        "(\(yOutParameter) (\(xOutParameter) 1656.0 1333.0 scale) \(xOutParameter) 2985.0 997.0 scale) scale) 1 'frequencies' tset" ++
-        "(\(yOutParameter) (\(xOutParameter) 2437.0 2522.0 scale) \(xOutParameter) 3329.0 2343.0 scale) scale) 2 'frequencies' tset" ++
-        "(\(yOutParameter) (\(xOutParameter) 3704.0 3687.0 scale) \(xOutParameter) 3807.0 3357.0 scale) scale) 3 'frequencies' tset" ++
-        "" ++
-        "'bandwidths' 4 zeros" ++
-        "" ++
-        "(((0 'frequencies' tget) 0.02 *) 50.0 +) 0 'bandwidths' tset" ++
-        "(((1 'frequencies' tget) 0.02 *) 50.0 +) 1 'bandwidths' tset" ++
-        "(((2 'frequencies' tget) 0.02 *) 50.0 +) 2 'bandwidths' tset" ++
-        "(((3 'frequencies' tget) 0.02 *) 50.0 +) 3 'bandwidths' tset" ++
+        "(\(yOutParameter) (\(xOutParameter) 844.0 768.0 scale) (\(xOutParameter) 324.0 378.0 scale) scale) 0 'frequencies' tset" ++
+        "(\(yOutParameter) (\(xOutParameter) 1656.0 1333.0 scale) (\(xOutParameter) 2985.0 997.0 scale) scale) 1 'frequencies' tset" ++
+        "(\(yOutParameter) (\(xOutParameter) 2437.0 2522.0 scale) (\(xOutParameter) 3329.0 2343.0 scale) scale) 2 'frequencies' tset" ++
+        "(\(yOutParameter) (\(xOutParameter) 3704.0 3687.0 scale) (\(xOutParameter) 3807.0 3357.0 scale) scale) 3 'frequencies' tset" ++
         "" ++
         "\(AKOperation.input)" ++
-        "(0 'frequencies' tget) (0 'bandwidths' tget) reson" ++
-        "(1 'frequencies' tget) (1 'bandwidths' tget) reson" ++
-        "(2 'frequencies' tget) (2 'bandwidths' tget) reson" ++
-        "(3 'frequencies' tget) (3 'bandwidths' tget) reson" ++
+        "(0 'frequencies' tget) ((dup 0.02 *) 50.0 +) reson" ++
+        "(1 'frequencies' tget) ((dup 0.02 *) 50.0 +) reson" ++
+        "(2 'frequencies' tget) ((dup 0.02 *) 50.0 +) reson" ++
+        "(3 'frequencies' tget) ((dup 0.02 *) 50.0 +) reson" ++
         "dup"
 
         self.init(input, sporth: sporth)
