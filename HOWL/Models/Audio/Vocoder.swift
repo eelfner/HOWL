@@ -74,19 +74,23 @@ class Vocoder: AKNode {
     }
     
     enum Formant1Parameters: Int {
-        case CutoffFrequency
+        case Frequency
+        case Bandwidth
     }
     
     enum Formant2Parameters: Int {
-        case CutoffFrequency
+        case Frequency
+        case Bandwidth
     }
     
     enum Formant3Parameters: Int {
-        case CutoffFrequency
+        case Frequency
+        case Bandwidth
     }
     
     enum Formant4Parameters: Int {
-        case CutoffFrequency
+        case Frequency
+        case Bandwidth
     }
     
     // MARK: - Initialization
@@ -97,24 +101,37 @@ class Vocoder: AKNode {
         
         let _ = AKOperation.sineWave(frequency: AKOperation.parameters(Parameters.LFOXRate.rawValue), amplitude: 500.0)
         
-//        let filter = AKOperation.input.moogLadderFilter(cutoffFrequency: oscillator + 600.0, resonance: 0.5)
+        let filter1 = AKOperation.input.resonantFilter(
+            frequency: AKOperation.parameters(Formant1Parameters.Frequency.rawValue),
+            bandwidth: AKOperation.parameters(Formant1Parameters.Bandwidth.rawValue)
+        )
         
-        let filter1 = AKOperation.input.moogLadderFilter(cutoffFrequency: AKOperation.parameters(Formant1Parameters.CutoffFrequency.rawValue), resonance: 0.75)
-        let filter2 = AKOperation.input.moogLadderFilter(cutoffFrequency: AKOperation.parameters(Formant2Parameters.CutoffFrequency.rawValue), resonance: 0.75)
-        let filter3 = AKOperation.input.moogLadderFilter(cutoffFrequency: AKOperation.parameters(Formant3Parameters.CutoffFrequency.rawValue), resonance: 0.75)
-        let filter4 = AKOperation.input.moogLadderFilter(cutoffFrequency: AKOperation.parameters(Formant4Parameters.CutoffFrequency.rawValue), resonance: 0.75)
+        let filter2 = AKOperation.input.resonantFilter(
+            frequency: AKOperation.parameters(Formant2Parameters.Frequency.rawValue),
+            bandwidth: AKOperation.parameters(Formant2Parameters.Bandwidth.rawValue)
+        )
+        
+        let filter3 = AKOperation.input.resonantFilter(
+            frequency: AKOperation.parameters(Formant3Parameters.Frequency.rawValue),
+            bandwidth: AKOperation.parameters(Formant3Parameters.Bandwidth.rawValue)
+        )
+        
+        let filter4 = AKOperation.input.resonantFilter(
+            frequency: AKOperation.parameters(Formant4Parameters.Frequency.rawValue),
+            bandwidth: AKOperation.parameters(Formant4Parameters.Bandwidth.rawValue)
+        )
         
         self.formant1 = AKOperationEffect(self.mixer, operation: filter1)
-        self.formant1.parameters = [844.0]
+        self.formant1.parameters = [844.0, 100.0]
         
         self.formant2 = AKOperationEffect(self.formant1, operation: filter2)
-        self.formant2.parameters = [1656.0]
+        self.formant2.parameters = [1656.0, 100.0]
         
         self.formant3 = AKOperationEffect(self.formant2, operation: filter3)
-        self.formant3.parameters = [2437.0]
+        self.formant3.parameters = [2437.0, 100.0]
         
         self.formant4 = AKOperationEffect(self.formant3, operation: filter4)
-        self.formant4.parameters = [3704.0]
+        self.formant4.parameters = [3704.0, 100.0]
         
         super.init()
         
@@ -125,10 +142,17 @@ class Vocoder: AKNode {
     // MARK: - Setters
     
     private func setFormants(formants: [Formant]) {
-        self.formant1.parameters[Formant1Parameters.CutoffFrequency.rawValue] = formants[0].frequency
-        self.formant2.parameters[Formant2Parameters.CutoffFrequency.rawValue] = formants[1].frequency
-        self.formant3.parameters[Formant3Parameters.CutoffFrequency.rawValue] = formants[2].frequency
-        self.formant4.parameters[Formant4Parameters.CutoffFrequency.rawValue] = formants[3].frequency
+        self.formant1.parameters[Formant1Parameters.Frequency.rawValue] = formants[0].frequency
+        self.formant1.parameters[Formant1Parameters.Bandwidth.rawValue] = formants[0].bandwidth
+        
+        self.formant2.parameters[Formant2Parameters.Frequency.rawValue] = formants[1].frequency
+        self.formant2.parameters[Formant2Parameters.Bandwidth.rawValue] = formants[1].bandwidth
+        
+        self.formant3.parameters[Formant3Parameters.Frequency.rawValue] = formants[2].frequency
+        self.formant3.parameters[Formant3Parameters.Bandwidth.rawValue] = formants[2].bandwidth
+        
+        self.formant4.parameters[Formant4Parameters.Frequency.rawValue] = formants[3].frequency
+        self.formant4.parameters[Formant4Parameters.Bandwidth.rawValue] = formants[3].bandwidth
     }
     
     // MARK: - Formant calculations
