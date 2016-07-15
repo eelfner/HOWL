@@ -223,35 +223,21 @@ private class FilterBank: AKOperationEffect {
 //                     "3000.0 300.0 reson" ++
 //                     "4000.0 400.0 reson"
         
+        let formant1Parameter = AKOperation.parameters(Parameter.Formant1.rawValue)
+        let formant2Parameter = AKOperation.parameters(Parameter.Formant2.rawValue)
+        let formant3Parameter = AKOperation.parameters(Parameter.Formant3.rawValue)
+        let formant4Parameter = AKOperation.parameters(Parameter.Formant4.rawValue)
+        
         let sporth =
-        "'top_left_frequencies' '844.0 1656.0 2437.0 3704.0' gen_vals" ++
-        "'top_right_frequencies' '768.0 1333.0 2522.0 3687.0' gen_vals" ++
-        "'bottom_left_frequencies' '324.0 2985.0 3329.0 3807.0' gen_vals" ++
-        "'bottom_right_frequencies' '378.0 997.0 2343.0 3357.0' gen_vals" ++
-        "" ++
         "((\(lfoXRateParameter) (\(lfoXDepthParameter) 0.5 *) sine) \(xInParameter) +) \(Parameter.XOut.rawValue) pset" ++
         "((\(lfoYRateParameter) (\(lfoYDepthParameter) 0.5 *) sine) \(yInParameter) +) \(Parameter.YOut.rawValue) pset" ++
         "" ++
-        "'top_frequencies' 4 zeros" ++
-        "" ++
-        "(\(xOutParameter) (0 'top_left_frequencies' tget) (0 'top_right_frequencies' tget) scale) 0 'top_frequencies' tset" ++
-        "(\(xOutParameter) (1 'top_left_frequencies' tget) (1 'top_right_frequencies' tget) scale) 1 'top_frequencies' tset" ++
-        "(\(xOutParameter) (2 'top_left_frequencies' tget) (2 'top_right_frequencies' tget) scale) 2 'top_frequencies' tset" ++
-        "(\(xOutParameter) (3 'top_left_frequencies' tget) (3 'top_right_frequencies' tget) scale) 3 'top_frequencies' tset" ++
-        "" ++
-        "'bottom_frequencies' 4 zeros" ++
-        "" ++
-        "(\(xOutParameter) (0 'bottom_left_frequencies' tget) (0 'bottom_right_frequencies' tget) scale) 0 'bottom_frequencies' tset" ++
-        "(\(xOutParameter) (1 'bottom_left_frequencies' tget) (1 'bottom_right_frequencies' tget) scale) 1 'bottom_frequencies' tset" ++
-        "(\(xOutParameter) (2 'bottom_left_frequencies' tget) (2 'bottom_right_frequencies' tget) scale) 2 'bottom_frequencies' tset" ++
-        "(\(xOutParameter) (3 'bottom_left_frequencies' tget) (3 'bottom_right_frequencies' tget) scale) 3 'bottom_frequencies' tset" ++
-        "" ++
         "'frequencies' 4 zeros" ++
         "" ++
-        "(\(yOutParameter) (0 'top_frequencies' tget) (0 'bottom_frequencies' tget) scale) 0 'frequencies' tset" ++
-        "(\(yOutParameter) (1 'top_frequencies' tget) (1 'bottom_frequencies' tget) scale) 1 'frequencies' tset" ++
-        "(\(yOutParameter) (2 'top_frequencies' tget) (2 'bottom_frequencies' tget) scale) 2 'frequencies' tset" ++
-        "(\(yOutParameter) (3 'top_frequencies' tget) (3 'bottom_frequencies' tget) scale) 3 'frequencies' tset" ++
+        "(\(yOutParameter) (\(xOutParameter) 844.0 768.0 scale) \(xOutParameter) 324.0 378.0 scale) scale) 0 'frequencies' tset" ++
+        "(\(yOutParameter) (\(xOutParameter) 1656.0 1333.0 scale) \(xOutParameter) 2985.0 997.0 scale) scale) 1 'frequencies' tset" ++
+        "(\(yOutParameter) (\(xOutParameter) 2437.0 2522.0 scale) \(xOutParameter) 3329.0 2343.0 scale) scale) 2 'frequencies' tset" ++
+        "(\(yOutParameter) (\(xOutParameter) 3704.0 3687.0 scale) \(xOutParameter) 3807.0 3357.0 scale) scale) 3 'frequencies' tset" ++
         "" ++
         "'bandwidths' 4 zeros" ++
         "" ++
