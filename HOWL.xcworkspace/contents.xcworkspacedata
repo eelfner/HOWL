@@ -5,6 +5,9 @@
       location = "group:HOWL.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Submodules/AudioKit/AudioKit/iOS/AudioKit For iOS.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

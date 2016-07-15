@@ -25,6 +25,7 @@
 		6596952E1D1E7EDF00CCFB0E /* AudioUnit+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6596952D1D1E7EDF00CCFB0E /* AudioUnit+Helpers.swift */; };
 		65A64DD41CF1D6D300D49967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A64DD31CF1D6D300D49967 /* Assets.xcassets */; };
 		65A64DD61CF2DF1900D49967 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A64DD51CF2DF1900D49967 /* Launch Screen.storyboard */; };
+		65A84E571D3874D00072A3B0 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A84E561D3874D00072A3B0 /* AudioKit.framework */; };
 		65C4EC9D1CF198C3000D5B16 /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C4EC9C1CF198C3000D5B16 /* Pitch.swift */; };
 		65EC06CF1D02824600CDDF17 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC06CD1D02824600CDDF17 /* Settings.swift */; };
 		65F2B76C1C1FCF8E00E2DA15 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65F2B76A1C1FCF8E00E2DA15 /* Settings.bundle */; };
@@ -64,6 +65,7 @@
 		6596952D1D1E7EDF00CCFB0E /* AudioUnit+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AudioUnit+Helpers.swift"; sourceTree = "<group>"; };
 		65A64DD31CF1D6D300D49967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = HOWL/Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		65A64DD51CF2DF1900D49967 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		65A84E561D3874D00072A3B0 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "Submodules/AudioKit/AudioKit/iOS/build/Debug-iphoneos/AudioKit.framework"; sourceTree = "<group>"; };
 		65C4EC9C1CF198C3000D5B16 /* Pitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
 		65D7E3701C0027CF009D6994 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		65EC06CB1D02824600CDDF17 /* AudiobusOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudiobusOld.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			files = (
 				CEC19FE816FAF13F8D05FBB8 /* Pods_HOWL.framework in Frameworks */,
 				650D8BFE1CFBF67A00EFD767 /* AudioToolbox.framework in Frameworks */,
+				65A84E571D3874D00072A3B0 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +258,7 @@
 		7FCEBDA14A75CF18C40FFE38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65A84E561D3874D00072A3B0 /* AudioKit.framework */,
 				650D8BFD1CFBF67A00EFD767 /* AudioToolbox.framework */,
 				C1AFBCF66E6183BF8BC06AC6 /* Pods_HOWL.framework */,
 			);
@@ -521,6 +525,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "HOWL/Supporting Files/HOWL.entitlements";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Submodules/AudioKit/AudioKit/iOS/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "HOWL/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -539,6 +547,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "HOWL/Supporting Files/HOWL.entitlements";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Submodules/AudioKit/AudioKit/iOS/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "HOWL/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

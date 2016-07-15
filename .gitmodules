@@ -1,0 +1,3 @@
+[submodule "Submodules/AudioKit"]
+	path = Submodules/AudioKit
+	url = https://github.com/audiokit/AudioKit
