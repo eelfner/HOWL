@@ -64,6 +64,9 @@ class Vocoder: AKNode {
     
     private let mixer: AKMixer
     
+    private let lfoX: LFO
+    private let lfoY: LFO
+    
     private let formant1: ResonantFilter
     private let formant2: ResonantFilter
     private let formant3: ResonantFilter
@@ -79,7 +82,8 @@ class Vocoder: AKNode {
         self.mixer = AKMixer(input)
         self.mixer.stop()
         
-        let _ = AKOperation.sineWave(frequency: AKOperation.parameters(Parameters.LFOXRate.rawValue), amplitude: 500.0)
+        self.lfoX = LFO(frequency: lfoXRate.value, amplitude: lfoXDepth.value)
+        self.lfoY = LFO(frequency: lfoYRate.value, amplitude: lfoYDepth.value)
         
         self.formant1 = ResonantFilter(self.mixer)
         self.formant2 = ResonantFilter(self.formant1)
@@ -141,7 +145,39 @@ class Vocoder: AKNode {
 
 }
 
-private class LFO: AKOperationEffect {
+private class LFO: AKOperationGenerator {
+    
+    private enum Parameters: Int {
+        case Frequency
+        case Amplitude
+    }
+    
+    convenience init(frequency: Double = 10.0, amplitude: Double = 1.0) {
+        self.init(operation: AKOperation.sineWave(
+            frequency: AKOperation.parameters(Parameters.Frequency.rawValue),
+            amplitude: AKOperation.parameters(Parameters.Amplitude.rawValue)
+            )
+        )
+        self.parameters = [frequency, amplitude]
+    }
+    
+    var frequency: Double {
+        get {
+            return parameters[Parameters.Frequency.rawValue]
+        }
+        set {
+            parameters[Parameters.Frequency.rawValue] = newValue
+        }
+    }
+    
+    var amplitude: Double {
+        get {
+            return parameters[Parameters.Amplitude.rawValue]
+        }
+        set {
+            parameters[Parameters.Amplitude.rawValue] = newValue
+        }
+    }
     
 }
 
@@ -156,7 +192,8 @@ private class ResonantFilter: AKOperationEffect {
         self.init(input, operation: AKOperation.input.resonantFilter(
             frequency: AKOperation.parameters(Parameters.Frequency.rawValue),
             bandwidth: AKOperation.parameters(Parameters.Bandwidth.rawValue)
-        ))
+            )
+        )
         self.parameters = [frequency, bandwidth]
     }
     
