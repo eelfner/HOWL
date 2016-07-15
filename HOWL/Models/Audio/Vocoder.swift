@@ -16,64 +16,69 @@ class Vocoder: AKNode {
     
     var xIn = Persistent(value: 0.5, key: "vocoderXIn") {
         didSet {
-            filterBank[value: .XIn] = xIn.value
+            filterBank.setValue(xIn.value, forParameter: .XIn)
         }
     }
     
     var yIn = Persistent(value: 0.5, key: "vocoderYIn") {
         didSet {
-            filterBank[value: .YIn] = yIn.value
+            filterBank.setValue(yIn.value, forParameter: .YIn)
         }
     }
     
-//    var xOut = AKInstrumentProperty(value: 0.5)
-//    var yOut = AKInstrumentProperty(value: 0.5)
+    var xOut: Double {
+        return filterBank.value(forParameter: .XOut)
+    }
+    
+    var yOut: Double {
+        return filterBank.value(forParameter: .YOut)
+    }
     
     var lfoXShape = Persistent(value: 0.25, key: "vocoderLfoXShape") {
         didSet {
-            filterBank[value: .LfoXShape] = lfoXShape.value
+            filterBank.setValue(lfoXShape.value, forParameter: .LfoXShape)
         }
     }
     
     var lfoXDepth = Persistent(value: 0.0, key: "vocoderLfoXDepth") {
         didSet {
-            filterBank[value: .LfoXDepth] = lfoXDepth.value
+            filterBank.setValue(lfoXDepth.value, forParameter: .LfoXDepth)
         }
     }
     
     var lfoXRate = Persistent(value: 0.0, key: "vocoderLfoXRate") {
         didSet {
-            filterBank[value: .LfoXRate] = lfoXRate.value
+            filterBank.setValue(lfoXRate.value, forParameter: .LfoXRate)
         }
     }
     
     var lfoYShape = Persistent(value: 0.25, key: "vocoderLfoYShape") {
         didSet {
-            filterBank[value: .LfoXShape] = lfoXShape.value
+            filterBank.setValue(lfoXShape.value, forParameter: .LfoXShape)
         }
     }
     
     var lfoYDepth = Persistent(value: 0.0, key: "vocoderLfoYDepth") {
         didSet {
-            filterBank[value: .LfoYDepth] = lfoYDepth.value
+            filterBank.setValue(lfoYDepth.value, forParameter: .LfoYDepth)
         }
     }
     
     var lfoYRate = Persistent(value: 0.0, key: "vocoderLfoYRate") {
         didSet {
-            filterBank[value: .LfoYRate] = lfoYRate.value
+            filterBank.setValue(lfoYRate.value, forParameter: .LfoYRate)
         }
     }
     
     var formantsFrequency = Persistent(value: 1.0, key: "vocoderFormantsFrequency") {
         didSet {
-            filterBank[value: .FormantsFrequency] = formantsFrequency.value
+            filterBank.setValue(formantsFrequency.value, forParameter: .FormantsFrequency)
         }
     }
     
     var formantsBandwidth = Persistent(value: 1.0, key: "vocoderFormantsBandwidth") {
         didSet {
-            filterBank[value: .FormantsBandwidth] = formantsBandwidth.value
+            filterBank.setValue(formantsBandwidth.value, forParameter: .FormantsBandwidth)
         }
     }
     
@@ -96,10 +101,6 @@ class Vocoder: AKNode {
     private let filterBank: FilterBank
     
     private let balancer: AKBalancer
-    
-    enum Parameters: Int {
-        case LFOXRate
-    }
     
     // MARK: - Initialization
     
@@ -179,30 +180,29 @@ private class FilterBank: AKOperationEffect {
         let formantsFrequencyParameter = AKOperation.parameters(Parameter.FormantsFrequency.rawValue) + 0.01
         let formantsBandwidthParameter = AKOperation.parameters(Parameter.FormantsBandwidth.rawValue) + 0.01
         
-        let sporth =
-        "((\(lfoXRateParameter) (\(lfoXDepthParameter) 0.5 *) sine) \(xInParameter) +) \(Parameter.XOut.rawValue) pset" ++
-        "((\(lfoYRateParameter) (\(lfoYDepthParameter) 0.5 *) sine) \(yInParameter) +) \(Parameter.YOut.rawValue) pset" ++
-        "" ++
-        "'frequencies' 4 zeros" ++
-        "" ++
-        "(\(yOutParameter) (\(xOutParameter) 844.0 768.0 scale) (\(xOutParameter) 324.0 378.0 scale) scale) 0 'frequencies' tset" ++
-        "(\(yOutParameter) (\(xOutParameter) 1656.0 1333.0 scale) (\(xOutParameter) 2985.0 997.0 scale) scale) 1 'frequencies' tset" ++
-        "(\(yOutParameter) (\(xOutParameter) 2437.0 2522.0 scale) (\(xOutParameter) 3329.0 2343.0 scale) scale) 2 'frequencies' tset" ++
-        "(\(yOutParameter) (\(xOutParameter) 3704.0 3687.0 scale) (\(xOutParameter) 3807.0 3357.0 scale) scale) 3 'frequencies' tset" ++
-        "" ++
-        "\(AKOperation.input)" ++
-        "((0 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
-        "((1 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
-        "((2 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
-        "((3 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
-        "dup"
+        let sporth = "((\(lfoXRateParameter) (\(lfoXDepthParameter) 0.5 *) sine) \(xInParameter) +) \(Parameter.XOut.rawValue) pset" ++
+                     "((\(lfoYRateParameter) (\(lfoYDepthParameter) 0.5 *) sine) \(yInParameter) +) \(Parameter.YOut.rawValue) pset" ++
+                     "" ++
+                     "'frequencies' 4 zeros" ++
+                     "" ++
+                     "(\(yOutParameter) (\(xOutParameter) 844.0 768.0 scale) (\(xOutParameter) 324.0 378.0 scale) scale) 0 'frequencies' tset" ++
+                     "(\(yOutParameter) (\(xOutParameter) 1656.0 1333.0 scale) (\(xOutParameter) 2985.0 997.0 scale) scale) 1 'frequencies' tset" ++
+                     "(\(yOutParameter) (\(xOutParameter) 2437.0 2522.0 scale) (\(xOutParameter) 3329.0 2343.0 scale) scale) 2 'frequencies' tset" ++
+                     "(\(yOutParameter) (\(xOutParameter) 3704.0 3687.0 scale) (\(xOutParameter) 3807.0 3357.0 scale) scale) 3 'frequencies' tset" ++
+                     "" ++
+                     "\(AKOperation.input)" ++
+                     "((0 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+                     "((1 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+                     "((2 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+                     "((3 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+                     "dup"
 
         self.init(input, sporth: sporth)
         self.parameters = [
             xIn,
             yIn,
-            0.5,
-            0.5,
+            xIn,
+            yIn,
             lfoXShape,
             lfoXDepth,
             lfoXRate,
@@ -214,13 +214,14 @@ private class FilterBank: AKOperationEffect {
         ]
     }
     
-    subscript(value parameter: Parameter) -> Double {
-        get {
-            return parameters[parameter.rawValue]
-        }
-        set {
-            parameters[parameter.rawValue] = newValue
-        }
+    // MARK: Parameters
+    
+    func setValue(value: Double, forParameter parameter: Parameter) {
+        parameters[parameter.rawValue] = value
+    }
+    
+    func value(forParameter parameter: Parameter) -> Double {
+        return parameters[parameter.rawValue]
     }
     
 }
@@ -232,95 +233,6 @@ infix operator ++ {
 
 private func ++ (left: String, right: String) -> String {
     return left + "\n" + right
-}
-
-extension AKOperation {
-    
-    /// This scales from 0 to 1 to a range defined by a minimum and maximum point in the input and output domain.
-    ///
-    /// - Parameters:
-    ///   - minimum: Minimum value to scale to. (Default: 0)
-    ///   - maximum: Maximum value to scale to. (Default: 1)
-    ///
-    public func lerp(
-        minimum minimum: AKParameter = 0,
-                maximum: AKParameter = 1
-        ) -> AKOperation {
-        return AKOperation("(\(self) \(minimum) \(maximum) scale)")
-    }
-    
-}
-
-private class LFO: AKOperationGenerator {
-    
-    private enum Parameters: Int {
-        case Frequency
-        case Amplitude
-    }
-    
-    convenience init(frequency: Double = 10.0, amplitude: Double = 1.0) {
-        self.init(operation: AKOperation.sineWave(
-            frequency: AKOperation.parameters(Parameters.Frequency.rawValue),
-            amplitude: AKOperation.parameters(Parameters.Amplitude.rawValue)
-            )
-        )
-        self.parameters = [frequency, amplitude]
-    }
-    
-    var frequency: Double {
-        get {
-            return parameters[Parameters.Frequency.rawValue]
-        }
-        set {
-            parameters[Parameters.Frequency.rawValue] = newValue
-        }
-    }
-    
-    var amplitude: Double {
-        get {
-            return parameters[Parameters.Amplitude.rawValue]
-        }
-        set {
-            parameters[Parameters.Amplitude.rawValue] = newValue
-        }
-    }
-    
-}
-
-private class ResonantFilter: AKOperationEffect {
-    
-    private enum Parameters: Int {
-        case Frequency
-        case Bandwidth
-    }
-    
-    convenience init(_ input: AKNode, frequency: Double = 1000.0, bandwidth: Double = 100.0) {
-        self.init(input, operation: AKOperation.input.resonantFilter(
-            frequency: AKOperation.parameters(Parameters.Frequency.rawValue),
-            bandwidth: AKOperation.parameters(Parameters.Bandwidth.rawValue)
-            )
-        )
-        self.parameters = [frequency, bandwidth]
-    }
-    
-    var frequency: Double {
-        get {
-            return parameters[Parameters.Frequency.rawValue]
-        }
-        set {
-            parameters[Parameters.Frequency.rawValue] = newValue
-        }
-    }
-    
-    var bandwidth: Double {
-        get {
-            return parameters[Parameters.Bandwidth.rawValue]
-        }
-        set {
-            parameters[Parameters.Bandwidth.rawValue] = newValue
-        }
-    }
-    
 }
 
 extension Vocoder: AKToggleable {
