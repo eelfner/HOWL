@@ -160,11 +160,11 @@ private class FilterBank: AKOperationEffect {
           formantsBandwidth: Double
         ) {
         
-//        let formantsFrequency = AKOperation.parameters(Parameter.FormantsFrequency.rawValue)
-//        let formantsBandwidth = AKOperation.parameters(Parameter.FormantsBandwidth.rawValue)
-        
         let xInParameter = AKOperation.parameters(Parameter.XIn.rawValue)
         let yInParameter = AKOperation.parameters(Parameter.YIn.rawValue)
+        
+        let formantsFrequencyParameter = AKOperation.parameters(Parameter.FormantsFrequency.rawValue) + 0.01
+        let formantsBandwidthParameter = AKOperation.parameters(Parameter.FormantsBandwidth.rawValue) + 0.01
         
         let topLeftFrequencies = [844.0, 1656.0, 2437.0, 3704.0] // /æ/
         let topRightFrequencies = [768.0, 1333.0, 2522.0, 3687.0] // /α/
@@ -180,50 +180,17 @@ private class FilterBank: AKOperationEffect {
         }
         
         let frequencies = zip(topFrequencies, bottomFrequencies).map { topFrequency, bottomFrequency in
-            return yInParameter.scale(minimum: topFrequency, maximum: bottomFrequency)
+            return formantsFrequencyParameter * yInParameter.scale(minimum: topFrequency, maximum: bottomFrequency)
         }
         
         let bandwidths = frequencies.map { frequency in
-            return frequency * 0.02 + 50.0
+            return formantsBandwidthParameter * (frequency * 0.02 + 50.0)
         }
         
         let filter = zip(frequencies, bandwidths).reduce(AKOperation.input) { input, parameters in
             let (frequency, bandwidth) = parameters
             return input.resonantFilter(frequency: frequency, bandwidth: bandwidth)
         }
-        
-//        let topFrequencies = zip(topLeftFrequencies, topRightFrequencies).map { topLeftFrequency, topRightFrequency in
-//            return xOut * (topRightFrequency - topLeftFrequency).ak + topLeftFrequency.ak
-//        }
-//        
-//        let bottomFrequencies = zip(bottomLeftFrequencies, bottomRightFrequencies).map { bottomLeftFrequency, bottomRightFrequency in
-//            return xOut * (bottomRightFrequency - bottomLeftFrequency).ak + bottomLeftFrequency.ak
-//        }
-//        
-//        let frequencyScale = AKMaximum(firstInput: formantsFrequency, secondInput: 0.01.ak)
-//        
-//        let frequencies = zip(topFrequencies, bottomFrequencies).map { topFrequency, bottomFrequency in
-//            return (yOut * (bottomFrequency - topFrequency) + topFrequency) * frequencyScale
-//        }
-//        
-//        let bandwidthScale = AKMaximum(firstInput: formantsBandwidth, secondInput: 0.01.ak)
-//        
-//        let bandwidths = frequencies.map { frequency in
-//            return (frequency * 0.02.ak + 50.0.ak) * bandwidthScale
-//        }
-//        
-//        let mutedAudioInput = AKAudioInput() * AKPortamento(input: inputAmplitude, halfTime: 0.001.ak)
-//        
-//        let mutedInput = (input + mutedAudioInput) * AKPortamento(input: amplitude, halfTime: 0.001.ak)
-//        
-//        let filter = zip(frequencies, bandwidths).reduce(mutedInput) { input, parameters in
-//            let (frequency, bandwidth) = parameters
-//            return AKResonantFilter(
-//                input: input,
-//                centerFrequency: AKPortamento(input: frequency, halfTime: 0.001.ak),
-//                bandwidth: AKPortamento(input: bandwidth, halfTime: 0.001.ak)
-//            )
-//        }
         
         self.init(input, operation: filter)
         self.parameters = [
