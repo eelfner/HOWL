@@ -191,10 +191,10 @@ private class FilterBank: AKOperationEffect {
                      "(\(yOutParameter) (\(xOutParameter) 3704.0 3687.0 scale) (\(xOutParameter) 3807.0 3357.0 scale) scale) 3 'frequencies' tset" ++
                      "" ++
                      "\(AKOperation.input)" ++
-                     "((0 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
-                     "((1 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
-                     "((2 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
-                     "((3 'frequencies' tget) \(formantsFrequencyParameter) *) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+                     "(((0 'frequencies' tget) \(formantsFrequencyParameter) *) 0.02 port) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+                     "(((1 'frequencies' tget) \(formantsFrequencyParameter) *) 0.02 port) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+                     "(((2 'frequencies' tget) \(formantsFrequencyParameter) *) 0.02 port) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
+                     "(((3 'frequencies' tget) \(formantsFrequencyParameter) *) 0.02 port) (((dup 0.02 *) 50.0 +) \(formantsBandwidthParameter) *) reson" ++
                      "dup"
 
         self.init(input, sporth: sporth)
