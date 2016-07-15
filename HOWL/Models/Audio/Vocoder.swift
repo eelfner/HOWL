@@ -160,16 +160,28 @@ private class FilterBank: AKOperationEffect {
           formantsBandwidth: Double
         ) {
         
-        let xInParameter = AKOperation.parameters(Parameter.XIn.rawValue)
-        let yInParameter = AKOperation.parameters(Parameter.YIn.rawValue)
-        
-        let formantsFrequencyParameter = AKOperation.parameters(Parameter.FormantsFrequency.rawValue) + 0.01
-        let formantsBandwidthParameter = AKOperation.parameters(Parameter.FormantsBandwidth.rawValue) + 0.01
-        
         let topLeftFrequencies = [844.0, 1656.0, 2437.0, 3704.0] // /æ/
         let topRightFrequencies = [768.0, 1333.0, 2522.0, 3687.0] // /α/
         let bottomLeftFrequencies = [324.0, 2985.0, 3329.0, 3807.0] // /i/
         let bottomRightFrequencies = [378.0, 997.0, 2343.0, 3357.0] // /u/
+        
+        let xInParameter = AKOperation.parameters(Parameter.XIn.rawValue)
+        let yInParameter = AKOperation.parameters(Parameter.YIn.rawValue)
+        
+//        let lfoXShapeParameter = AKOperation.parameters(Parameter.LfoXShape.rawValue)
+//        let lfoXDepthParameter = AKOperation.parameters(Parameter.LfoXDepth.rawValue)
+//        let lfoXRateParameter = AKOperation.parameters(Parameter.LfoXRate.rawValue)
+//        
+//        let lfoYShapeParameter = AKOperation.parameters(Parameter.LfoYShape.rawValue)
+//        let lfoYDepthParameter = AKOperation.parameters(Parameter.LfoYDepth.rawValue)
+//        let lfoYRateParameter = AKOperation.parameters(Parameter.LfoYRate.rawValue)
+        
+        let formantsFrequencyParameter = AKOperation.parameters(Parameter.FormantsFrequency.rawValue) + 0.01
+        let formantsBandwidthParameter = AKOperation.parameters(Parameter.FormantsBandwidth.rawValue) + 0.01
+        
+//        let lfoX = AKOperation.sineWave(frequency: lfoXRateParameter, amplitude: lfoXDepthParameter).scale(minimum: 0.0, maximum: 1.0)
+//        
+//        let lfoY = AKOperation.sineWave(frequency: lfoYRateParameter, amplitude: lfoYDepthParameter).scale(minimum: 0.0, maximum: 1.0)
         
         let topFrequencies = zip(topLeftFrequencies, topRightFrequencies).map { topLeftFrequency, topRightFrequency in
             return xInParameter.scale(minimum: topLeftFrequency, maximum: topRightFrequency)
@@ -187,12 +199,12 @@ private class FilterBank: AKOperationEffect {
             return formantsBandwidthParameter * (frequency * 0.02 + 50.0)
         }
         
-        let filter = zip(frequencies, bandwidths).reduce(AKOperation.input) { input, parameters in
+        let filters = zip(frequencies, bandwidths).reduce(AKOperation.input) { input, parameters in
             let (frequency, bandwidth) = parameters
             return input.resonantFilter(frequency: frequency, bandwidth: bandwidth)
         }
         
-        self.init(input, operation: filter)
+        self.init(input, operation: filters)
         self.parameters = [
             xIn,
             yIn,
@@ -215,37 +227,6 @@ private class FilterBank: AKOperationEffect {
             parameters[parameter.rawValue] = newValue
         }
     }
-    
-    
-    
-//    // MARK: - Formant calculations
-//    
-//    private typealias Formant = (frequency: Double, bandwidth: Double)
-//    
-//    private let topLeftFrequencies = [844.0, 1656.0, 2437.0, 3704.0] // /æ/
-//    private let topRightFrequencies = [768.0, 1333.0, 2522.0, 3687.0] // /α/
-//    private let bottomLeftFrequencies = [324.0, 2985.0, 3329.0, 3807.0] // /i/
-//    private let bottomRightFrequencies = [378.0, 997.0, 2343.0, 3357.0] // /u/
-//    
-//    private func formants(atLocation location: CGPoint) -> [Formant] {
-//        let topFrequencies = zip(topLeftFrequencies, topRightFrequencies).map { topLeftFrequency, topRightFrequency in
-//            return Double(location.x).lerp(min: topLeftFrequency, max: topRightFrequency)
-//        }
-//        
-//        let bottomFrequencies = zip(bottomLeftFrequencies, bottomRightFrequencies).map { bottomLeftFrequency, bottomRightFrequency in
-//            return Double(location.x).lerp(min: bottomLeftFrequency, max: bottomRightFrequency)
-//        }
-//        
-//        let frequencies = zip(topFrequencies, bottomFrequencies).map { topFrequency, bottomFrequency in
-//            return Double(location.y).lerp(min: topFrequency, max: bottomFrequency)
-//        }
-//        
-//        return frequencies.map { frequency in
-//            let frequency = frequency * formantsFrequency.value
-//            let bandwidth = (frequency * 0.02 + 50.0) * formantsBandwidth.value
-//            return (frequency: frequency, bandwidth: bandwidth)
-//        }
-//    }
     
 }
 
