@@ -219,15 +219,47 @@ private class FilterBank: AKOperationEffect {
         "'top_right_frequencies' '768.0 1333.0 2522.0 3687.0' gen_vals" ++
         "'bottom_left_frequencies' '324.0 2985.0 3329.0 3807.0' gen_vals" ++
         "'bottom_right_frequencies' '378.0 997.0 2343.0 3357.0' gen_vals" ++
-        "'frequencies' '1000 2000 3000 4000' gen_vals" ++
-        "'bandwidths' '100 200 300 400' gen_vals" ++
+        "" ++
+        "'lfos' 2 zeros" ++
+        "" ++
+        "\(xInParameter) 0 'lfos' tset" ++
+        "\(yInParameter) 1 'lfos' tset" ++
+        "" ++
+        "'top_frequencies' 4 zeros" ++
+        "" ++
+        "(\(xInParameter) (0 'top_left_frequencies' tget) (0 'top_right_frequencies' tget) scale) 0 'top_frequencies' tset" ++
+        "(\(xInParameter) (1 'top_left_frequencies' tget) (1 'top_right_frequencies' tget) scale) 1 'top_frequencies' tset" ++
+        "(\(xInParameter) (2 'top_left_frequencies' tget) (2 'top_right_frequencies' tget) scale) 2 'top_frequencies' tset" ++
+        "(\(xInParameter) (3 'top_left_frequencies' tget) (3 'top_right_frequencies' tget) scale) 3 'top_frequencies' tset" ++
+        "" ++
+        "'bottom_frequencies' 4 zeros" ++
+        "" ++
+        "(\(xInParameter) (0 'bottom_left_frequencies' tget) (0 'bottom_right_frequencies' tget) scale) 0 'bottom_frequencies' tset" ++
+        "(\(xInParameter) (1 'bottom_left_frequencies' tget) (1 'bottom_right_frequencies' tget) scale) 1 'bottom_frequencies' tset" ++
+        "(\(xInParameter) (2 'bottom_left_frequencies' tget) (2 'bottom_right_frequencies' tget) scale) 2 'bottom_frequencies' tset" ++
+        "(\(xInParameter) (3 'bottom_left_frequencies' tget) (3 'bottom_right_frequencies' tget) scale) 3 'bottom_frequencies' tset" ++
+        "" ++
+        "'frequencies' 4 zeros" ++
+        "" ++
+        "(\(yInParameter) (0 'top_frequencies' tget) (0 'bottom_frequencies' tget) scale) 0 'frequencies' tset" ++
+        "(\(yInParameter) (1 'top_frequencies' tget) (1 'bottom_frequencies' tget) scale) 1 'frequencies' tset" ++
+        "(\(yInParameter) (2 'top_frequencies' tget) (2 'bottom_frequencies' tget) scale) 2 'frequencies' tset" ++
+        "(\(yInParameter) (3 'top_frequencies' tget) (3 'bottom_frequencies' tget) scale) 3 'frequencies' tset" ++
+        "" ++
+        "'bandwidths' 4 zeros" ++
+        "" ++
+        "(((0 'frequencies' tget) 0.02 *) 50.0 +) 0 'bandwidths' tset" ++
+        "(((1 'frequencies' tget) 0.02 *) 50.0 +) 1 'bandwidths' tset" ++
+        "(((2 'frequencies' tget) 0.02 *) 50.0 +) 2 'bandwidths' tset" ++
+        "(((3 'frequencies' tget) 0.02 *) 50.0 +) 3 'bandwidths' tset" ++
+        "" ++
         "\(AKOperation.input)" ++
-        "0 'frequencies' tget 0 'bandwidths' tget reson" ++
-        "1 'frequencies' tget 1 'bandwidths' tget reson" ++
-        "2 'frequencies' tget 2 'bandwidths' tget reson" ++
-        "3 'frequencies' tget 3 'bandwidths' tget reson" ++
+        "(0 'frequencies' tget) (0 'bandwidths' tget) reson" ++
+        "(1 'frequencies' tget) (1 'bandwidths' tget) reson" ++
+        "(2 'frequencies' tget) (2 'bandwidths' tget) reson" ++
+        "(3 'frequencies' tget) (3 'bandwidths' tget) reson" ++
         "dup"
-        
+
         self.init(input, sporth: sporth)
         self.parameters = [
             xIn,
