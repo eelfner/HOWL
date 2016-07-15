@@ -168,26 +168,29 @@ private class FilterBank: AKOperationEffect {
         let xInParameter = AKOperation.parameters(Parameter.XIn.rawValue)
         let yInParameter = AKOperation.parameters(Parameter.YIn.rawValue)
         
-//        let lfoXShapeParameter = AKOperation.parameters(Parameter.LfoXShape.rawValue)
-//        let lfoXDepthParameter = AKOperation.parameters(Parameter.LfoXDepth.rawValue)
-//        let lfoXRateParameter = AKOperation.parameters(Parameter.LfoXRate.rawValue)
-//        
-//        let lfoYShapeParameter = AKOperation.parameters(Parameter.LfoYShape.rawValue)
-//        let lfoYDepthParameter = AKOperation.parameters(Parameter.LfoYDepth.rawValue)
-//        let lfoYRateParameter = AKOperation.parameters(Parameter.LfoYRate.rawValue)
+        let lfoXShapeParameter = AKOperation.parameters(Parameter.LfoXShape.rawValue)
+        let lfoXDepthParameter = AKOperation.parameters(Parameter.LfoXDepth.rawValue)
+        let lfoXRateParameter = AKOperation.parameters(Parameter.LfoXRate.rawValue)
+        
+        let lfoYShapeParameter = AKOperation.parameters(Parameter.LfoYShape.rawValue)
+        let lfoYDepthParameter = AKOperation.parameters(Parameter.LfoYDepth.rawValue)
+        let lfoYRateParameter = AKOperation.parameters(Parameter.LfoYRate.rawValue)
         
         let formantsFrequencyParameter = AKOperation.parameters(Parameter.FormantsFrequency.rawValue) + 0.01
         let formantsBandwidthParameter = AKOperation.parameters(Parameter.FormantsBandwidth.rawValue) + 0.01
         
-//        let lfoX = AKOperation.sineWave(frequency: lfoXRateParameter, amplitude: lfoXDepthParameter).scale(minimum: 0.0, maximum: 1.0)
-//        let lfoY = AKOperation.sineWave(frequency: lfoYRateParameter, amplitude: lfoYDepthParameter).scale(minimum: 0.0, maximum: 1.0)
+        let lfoX = AKOperation.sineWave(frequency: lfoXRateParameter, amplitude: lfoXDepthParameter * 0.5)
+        let lfoY = AKOperation.sineWave(frequency: lfoYRateParameter, amplitude: lfoYDepthParameter * 0.5)
+        
+        let x = xInParameter + lfoX
+        let y = yInParameter + lfoY
         
         let topFrequencies = zip(topLeftFrequencies, topRightFrequencies).map { topLeftFrequency, topRightFrequency in
-            return xInParameter * (topRightFrequency - topLeftFrequency) + topLeftFrequency
+            return x * (topRightFrequency - topLeftFrequency) + topLeftFrequency
         }
         
         let bottomFrequencies = zip(bottomLeftFrequencies, bottomRightFrequencies).map { bottomLeftFrequency, bottomRightFrequency in
-            return xInParameter * (bottomRightFrequency - bottomLeftFrequency) + bottomLeftFrequency
+            return y * (bottomRightFrequency - bottomLeftFrequency) + bottomLeftFrequency
         }
         
         let frequencies = zip(topFrequencies, bottomFrequencies).map { topFrequency, bottomFrequency in
@@ -203,9 +206,29 @@ private class FilterBank: AKOperationEffect {
             return input.resonantFilter(frequency: frequency, bandwidth: bandwidth)
         }
         
-//        let filter = AKOperation.input.resonantFilter(frequency: 1000.0, bandwidth: 100.0).resonantFilter(frequency: 2000.0, bandwidth: 200.0).resonantFilter(frequency: 3000.0, bandwidth: 300.0).resonantFilter(frequency: 4000.0, bandwidth: 400.0)
+        let filter = AKOperation.input.resonantFilter(frequency: 1000.0, bandwidth: 100.0).resonantFilter(frequency: 2000.0, bandwidth: 200.0).resonantFilter(frequency: 3000.0, bandwidth: 300.0).resonantFilter(frequency: 4000.0, bandwidth: 400.0)
         
-        self.init(input, operation: filters)
+//        let sporth = "\(AKOperation.input)" ++
+//                     "1000.0 100.0 reson" ++
+//                     "2000.0 200.0 reson" ++
+//                     "3000.0 300.0 reson" ++
+//                     "4000.0 400.0 reson"
+        
+        let sporth =
+        "'top_left_frequencies' '844.0 1656.0 2437.0 3704.0' gen_vals" ++
+        "'top_right_frequencies' '768.0 1333.0 2522.0 3687.0' gen_vals" ++
+        "'bottom_left_frequencies' '324.0 2985.0 3329.0 3807.0' gen_vals" ++
+        "'bottom_right_frequencies' '378.0 997.0 2343.0 3357.0' gen_vals" ++
+        "'frequencies' '1000 2000 3000 4000' gen_vals" ++
+        "'bandwidths' '100 200 300 400' gen_vals" ++
+        "\(AKOperation.input)" ++
+        "0 'frequencies' tget 0 'bandwidths' tget reson" ++
+        "1 'frequencies' tget 1 'bandwidths' tget reson" ++
+        "2 'frequencies' tget 2 'bandwidths' tget reson" ++
+        "3 'frequencies' tget 3 'bandwidths' tget reson" ++
+        "dup"
+        
+        self.init(input, sporth: sporth)
         self.parameters = [
             xIn,
             yIn,
