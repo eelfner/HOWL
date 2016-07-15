@@ -136,6 +136,8 @@ private class FilterBank: AKOperationEffect {
     enum Parameter: Int {
         case XIn
         case YIn
+        case XOut
+        case YOut
         case LfoXShape
         case LfoXDepth
         case LfoXRate
@@ -220,31 +222,29 @@ private class FilterBank: AKOperationEffect {
         "'bottom_left_frequencies' '324.0 2985.0 3329.0 3807.0' gen_vals" ++
         "'bottom_right_frequencies' '378.0 997.0 2343.0 3357.0' gen_vals" ++
         "" ++
-        "'lfos' 2 zeros" ++
-        "" ++
-        "((\(lfoXRateParameter) (\(lfoXDepthParameter) 0.5 *) sine) \(xInParameter) +) 0 'lfos' tset" ++
-        "((\(lfoYRateParameter) (\(lfoYDepthParameter) 0.5 *) sine) \(yInParameter) +) 1 'lfos' tset" ++
+        "((\(lfoXRateParameter) (\(lfoXDepthParameter) 0.5 *) sine) \(xInParameter) +) 2 pset" ++
+        "((\(lfoYRateParameter) (\(lfoYDepthParameter) 0.5 *) sine) \(yInParameter) +) 3 pset" ++
         "" ++
         "'top_frequencies' 4 zeros" ++
         "" ++
-        "((0 'lfos' tget) (0 'top_left_frequencies' tget) (0 'top_right_frequencies' tget) scale) 0 'top_frequencies' tset" ++
-        "((0 'lfos' tget) (1 'top_left_frequencies' tget) (1 'top_right_frequencies' tget) scale) 1 'top_frequencies' tset" ++
-        "((0 'lfos' tget) (2 'top_left_frequencies' tget) (2 'top_right_frequencies' tget) scale) 2 'top_frequencies' tset" ++
-        "((0 'lfos' tget) (3 'top_left_frequencies' tget) (3 'top_right_frequencies' tget) scale) 3 'top_frequencies' tset" ++
+        "((2 p) (0 'top_left_frequencies' tget) (0 'top_right_frequencies' tget) scale) 0 'top_frequencies' tset" ++
+        "((2 p) (1 'top_left_frequencies' tget) (1 'top_right_frequencies' tget) scale) 1 'top_frequencies' tset" ++
+        "((2 p) (2 'top_left_frequencies' tget) (2 'top_right_frequencies' tget) scale) 2 'top_frequencies' tset" ++
+        "((2 p) (3 'top_left_frequencies' tget) (3 'top_right_frequencies' tget) scale) 3 'top_frequencies' tset" ++
         "" ++
         "'bottom_frequencies' 4 zeros" ++
         "" ++
-        "((0 'lfos' tget) (0 'bottom_left_frequencies' tget) (0 'bottom_right_frequencies' tget) scale) 0 'bottom_frequencies' tset" ++
-        "((0 'lfos' tget) (1 'bottom_left_frequencies' tget) (1 'bottom_right_frequencies' tget) scale) 1 'bottom_frequencies' tset" ++
-        "((0 'lfos' tget) (2 'bottom_left_frequencies' tget) (2 'bottom_right_frequencies' tget) scale) 2 'bottom_frequencies' tset" ++
-        "((0 'lfos' tget) (3 'bottom_left_frequencies' tget) (3 'bottom_right_frequencies' tget) scale) 3 'bottom_frequencies' tset" ++
+        "((2 p) (0 'bottom_left_frequencies' tget) (0 'bottom_right_frequencies' tget) scale) 0 'bottom_frequencies' tset" ++
+        "((2 p) (1 'bottom_left_frequencies' tget) (1 'bottom_right_frequencies' tget) scale) 1 'bottom_frequencies' tset" ++
+        "((2 p) (2 'bottom_left_frequencies' tget) (2 'bottom_right_frequencies' tget) scale) 2 'bottom_frequencies' tset" ++
+        "((2 p) (3 'bottom_left_frequencies' tget) (3 'bottom_right_frequencies' tget) scale) 3 'bottom_frequencies' tset" ++
         "" ++
         "'frequencies' 4 zeros" ++
         "" ++
-        "((1 'lfos' tget) (0 'top_frequencies' tget) (0 'bottom_frequencies' tget) scale) 0 'frequencies' tset" ++
-        "((1 'lfos' tget) (1 'top_frequencies' tget) (1 'bottom_frequencies' tget) scale) 1 'frequencies' tset" ++
-        "((1 'lfos' tget) (2 'top_frequencies' tget) (2 'bottom_frequencies' tget) scale) 2 'frequencies' tset" ++
-        "((1 'lfos' tget) (3 'top_frequencies' tget) (3 'bottom_frequencies' tget) scale) 3 'frequencies' tset" ++
+        "((3 p) (0 'top_frequencies' tget) (0 'bottom_frequencies' tget) scale) 0 'frequencies' tset" ++
+        "((3 p) (1 'top_frequencies' tget) (1 'bottom_frequencies' tget) scale) 1 'frequencies' tset" ++
+        "((3 p) (2 'top_frequencies' tget) (2 'bottom_frequencies' tget) scale) 2 'frequencies' tset" ++
+        "((3 p) (3 'top_frequencies' tget) (3 'bottom_frequencies' tget) scale) 3 'frequencies' tset" ++
         "" ++
         "'bandwidths' 4 zeros" ++
         "" ++
@@ -264,6 +264,8 @@ private class FilterBank: AKOperationEffect {
         self.parameters = [
             xIn,
             yIn,
+            0.5,
+            0.5,
             lfoXShape,
             lfoXDepth,
             lfoXRate,
