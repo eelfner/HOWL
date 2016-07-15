@@ -10,66 +10,66 @@
 		00296A26D06EA19DDC4B305AA1512AA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */; };
 		084918688823ED78B9D3056AFEA5E080 /* AudioPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18432583C3F9DBD8D08F1817357625E /* AudioPlot.swift */; };
 		0B824C7D89FE96D2DB3473D219892F80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */; };
-		14D0341D47D03DF1AC212E03E0FD5BDC /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87365B7A3BDB0AD2AE2C0F1F4D3D3393 /* SnapKit-dummy.m */; };
-		16D4BB3B31B5C26D80A773FBCB8EAC9E /* Persistable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 342727E1223A90D39DECCA3CD3778FF9 /* Persistable-dummy.m */; };
+		14D0341D47D03DF1AC212E03E0FD5BDC /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAC61CE3E2F638419F5D0DCB4A340D4 /* SnapKit-dummy.m */; };
+		16D4BB3B31B5C26D80A773FBCB8EAC9E /* Persistable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5401738723263717DE87443C88B6BCEA /* Persistable-dummy.m */; };
 		1A9948BEE63885A410DE61D1EA6FCC97 /* ProtonomeAudioKitControls-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AE3856D24301CE5CE699D6B39A661A /* ProtonomeAudioKitControls-dummy.m */; };
 		1AA6E038098BAF47DBA4D6855D8528B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */; };
-		1D4780C1FA5369AB534896133E9A9703 /* Degrad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7293ED02EF08FCDC64E94381BC9A60 /* Degrad.swift */; };
+		1D4780C1FA5369AB534896133E9A9703 /* Degrad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BF878FD520FACF2EEE446E5EF6A67 /* Degrad.swift */; };
 		2646C3FC2687ACDC72A1D96FBE8C010D /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4185930EF1A9004F8791D1EC171B61A9 /* SnapKit.framework */; };
 		2D8D6E026F06244397FE56BA31107D67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */; };
 		3129DF02CEDF437BD60C6F98029B5C02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */; };
-		38E2575D6F93657CDF9A7A2AAD07646B /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EC58C3C4E06BFB66D233042E46B36B /* ConstraintMaker.swift */; };
+		38E2575D6F93657CDF9A7A2AAD07646B /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2147007E2039BDA5AE98E2BE9CF9812 /* ConstraintMaker.swift */; };
 		3A16E325FA7FEE017393D9CBCC788A38 /* Pods-HOWL-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C98A59A5041DD141827D40E08B7CD25D /* Pods-HOWL-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F9FFF5D0715D6F3ACAF45F9910B02C9 /* UIColor+Protonome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6CF373C99932C368F927FF43F17F4 /* UIColor+Protonome.swift */; };
-		45D6717AE2F5CEB67C0511AA292E62F8 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3A368196D689D7D41976BD6861912 /* ConstraintItem.swift */; };
+		45D6717AE2F5CEB67C0511AA292E62F8 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB5D7591973DB437D68E42034EC2A67 /* ConstraintItem.swift */; };
 		463FA0E90D87F813561117D75672204E /* AudioControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8802C7D521E41BB6A1140BE7D8C495 /* AudioControl.swift */; };
-		46F5CA3BE0E5C346A83CC2B7E7D737F6 /* Persistable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DF03477CEDBE4C1DABD3198FD5FBBF7 /* Persistable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		475F28E0B2DEBD282F9E1BABFA5C17CA /* Parity-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5CDE8421D3A0F18A5F93EBF6979549 /* Parity-dummy.m */; };
-		4B3A15E09FA073DC55C67CE886CDF5FC /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E1696D4B4CC83EB326BF07E159C4B /* ViewController+SnapKit.swift */; };
-		4BECDFE678E416F24EF986191AB83B39 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE331B0F095F5F898FD4A3D28D5CF03 /* EdgeInsets.swift */; };
-		4F4F1C19511631C3337951EA10A5C7A3 /* Bezzy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F92DE094C71903BE81CD96157662B74 /* Bezzy.swift */; };
+		46F5CA3BE0E5C346A83CC2B7E7D737F6 /* Persistable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BCE01B3C571FC73FBC28BED32158BCF6 /* Persistable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		475F28E0B2DEBD282F9E1BABFA5C17CA /* Parity-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CB05AB6959E01E36FD59E4FC9D3D6B /* Parity-dummy.m */; };
+		4B3A15E09FA073DC55C67CE886CDF5FC /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F9B85BC6B85573E6B5E8F80C9B0BB8 /* ViewController+SnapKit.swift */; };
+		4BECDFE678E416F24EF986191AB83B39 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685EA6D377240DE68413DACF413A6D6 /* EdgeInsets.swift */; };
+		4F4F1C19511631C3337951EA10A5C7A3 /* Bezzy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE4C0989A8AFBCDF77D7A8A6B587C1 /* Bezzy.swift */; };
 		52D82A0E46E0948608B40C0EFDE26E72 /* DialControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF723938E6872311BC8B9150AB4032 /* DialControl.swift */; };
-		58947446D0826C307612AA0313C15F36 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE18DB3FD90015F2C1CED7CF1E978FB /* Persistable.swift */; };
+		58947446D0826C307612AA0313C15F36 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB213C6F9C5E33E60D90BD8846CC4DBF /* Persistable.swift */; };
 		5C34F17849C1243A95DE295E68678F2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */; };
-		5D3BC1EE9D22C90B981D4C2A095EB466 /* Degrad-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C151B475C57E18DE907281C82C5DE31 /* Degrad-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		636CE8B4C1E88AF4824DA71F2C08264D /* ProtonomeRoundedViews-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5900010B13D949B0A3594FB084363519 /* ProtonomeRoundedViews-dummy.m */; };
+		5D3BC1EE9D22C90B981D4C2A095EB466 /* Degrad-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D008C56D32393DA74AE37F6A2C06CD6 /* Degrad-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		636CE8B4C1E88AF4824DA71F2C08264D /* ProtonomeRoundedViews-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6577D865E8CA84DF1F3D5234DCC7EEDC /* ProtonomeRoundedViews-dummy.m */; };
 		6457B3E3F45EC528F288E05309779C33 /* Degrad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91CEA06DC9911C768A8836F3C426B31 /* Degrad.framework */; };
-		672B05630386FEA90CA4BDC098C6C092 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 292B9E37C039A6CFE42EDF9C748958AA /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6F811119885589866857371731633E2E /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A9CF726A88A987266F568D44DBFD6 /* View+SnapKit.swift */; };
+		672B05630386FEA90CA4BDC098C6C092 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 14DF86564BA077C60557BE0EDFEE1F16 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F811119885589866857371731633E2E /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770BC85A251FD814AEC3ACF307F77A50 /* View+SnapKit.swift */; };
 		6F8F780D6C668C19B324D7917D363387 /* Pods-HOWL-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C4CF2D809126D7A1EA40EBE64A4D3 /* Pods-HOWL-dummy.m */; };
-		711209598D58013CDFB1C65BAB9C54B3 /* MultitouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7F7336E369A68EC7C74984BE2BC11 /* MultitouchGestureRecognizer.swift */; };
-		71FC119F7B0A0B9A0FBA2D9F50EAE370 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043148F129D10380E137344D85CC5C5 /* Debugging.swift */; };
+		711209598D58013CDFB1C65BAB9C54B3 /* MultitouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009AEE421E588939A447A5D5AEFE6B7 /* MultitouchGestureRecognizer.swift */; };
+		71FC119F7B0A0B9A0FBA2D9F50EAE370 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CEC73146EDFFD311EFA010E45A46A3 /* Debugging.swift */; };
 		76196D8D898A3D48E961DBB4B91465A3 /* SliderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DA580F2E70C795891F17D9AA4504A /* SliderControl.swift */; };
-		76F9756D7D3F44638D52362F21EDF765 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B939230BACF804125F97DD891F51AB40 /* LayoutConstraint.swift */; };
+		76F9756D7D3F44638D52362F21EDF765 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39CCEA06B6322A052AFE06457159478 /* LayoutConstraint.swift */; };
 		7FF0EC6195FF3E68BF9E2CCE9D23B864 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */; };
-		81A464E70CCA1BE0E40E12856C27B8B2 /* MultitouchGestureRecognizer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA996EEB6D09068326E643B4C3BA6F4 /* MultitouchGestureRecognizer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FDC0E396C19AC6616087A4281B9F6AC /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95361F634989A9B3B9E9AC418E98716 /* Parity.swift */; };
-		901D7DED911F305BE9304D5B8E504C11 /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F919ED98977541BF0764AD1E56558B /* SnapKit.swift */; };
-		91BE82DE35518CC8ADA648AD05FFE671 /* Lerp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E03C9612E6FE01127671FEEAC7FAE /* Lerp-dummy.m */; };
+		81A464E70CCA1BE0E40E12856C27B8B2 /* MultitouchGestureRecognizer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E59E9BDD5D58450E333B8E7225A7F56D /* MultitouchGestureRecognizer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FDC0E396C19AC6616087A4281B9F6AC /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76BCA15C75363E4BE74BAA0F681E4E /* Parity.swift */; };
+		901D7DED911F305BE9304D5B8E504C11 /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37B569D87DAE47116B1D0C0A06711F /* SnapKit.swift */; };
+		91BE82DE35518CC8ADA648AD05FFE671 /* Lerp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5C3CFC2C25CCEF157D9EC78567CF /* Lerp-dummy.m */; };
 		93093B8F8D9B26C2A4550EA46FEACA30 /* ParameterFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A3AE6E7A533B03EDA5C5B60B9AA7A /* ParameterFormatter.swift */; };
-		93F2388CA49180B2E35DE478DE1DAA45 /* Bezzy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17F3924750B11370E71DE52608E981A6 /* Bezzy-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9E6DED8DAB7641A15BEFEDB36A577EEF /* Bezzy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D10F69D2B3E1ED2598D8DB1557EF6 /* Bezzy-dummy.m */; };
+		93F2388CA49180B2E35DE478DE1DAA45 /* Bezzy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 94D6E8605392C8C071C9EB58E7AE88A9 /* Bezzy-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E6DED8DAB7641A15BEFEDB36A577EEF /* Bezzy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE336B24AD1491E024E1B497551AB05B /* Bezzy-dummy.m */; };
 		A40CDD761CF99C46DDA8F1554C51EC72 /* ParameterScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02014754F56E8DD7844D87A4486C2420 /* ParameterScale.swift */; };
-		A7F8901DCEA0B84E84E3FEE39717F469 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB8DBCCAA54B0B44DBA9F0CC2901269 /* ConstraintDescription.swift */; };
+		A7F8901DCEA0B84E84E3FEE39717F469 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E220937D8156E79A976B3A0D2DC4481 /* ConstraintDescription.swift */; };
 		AC56A5E96995309B1AE58B56BEB303E2 /* Lerp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4B72D70CD2FBF853A99AA6C3F4C677 /* Lerp.framework */; };
-		BC72FE30D35C5CD385E2008C23CB35A5 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3379C0CA42C8BF8FA9EB8BA07622 /* ConstraintRelation.swift */; };
-		BD42DF424469ACBAC848A0595D003EAA /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EA05FBB05B864B883EA02B06CD1DE6 /* Lerp.swift */; };
+		BC72FE30D35C5CD385E2008C23CB35A5 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9CAD214A21712E6225EE4E9B756ABD /* ConstraintRelation.swift */; };
+		BD42DF424469ACBAC848A0595D003EAA /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32FA3FD0B097BA977E0CFD75A9CC0B /* Lerp.swift */; };
 		BD557998EE7132F2DD354A67D674BFF2 /* PickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501DFBE91B4D8A11FC2102DBBBD6B071 /* PickerControl.swift */; };
-		BED60003E5C93DD1F39BBBE87EBDE662 /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835BF7141118878E3D01A2E24C7EDD3A /* RoundedLabel.swift */; };
+		BED60003E5C93DD1F39BBBE87EBDE662 /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FCE1F06DAE4A11B087D906356F25AF /* RoundedLabel.swift */; };
 		CD24342F5C2ED7915E1D18F0B15E5878 /* Bezzy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122652C1F3C5574BA4A41E1A27F4B937 /* Bezzy.framework */; };
-		CF00FCD15708CDB1ECDE75F2E51ECD68 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA401F460C0E65577DE3F1A03C854CD2 /* RoundedButton.swift */; };
+		CF00FCD15708CDB1ECDE75F2E51ECD68 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5A9EAA56EE68019BAD20BBFCE1E4C /* RoundedButton.swift */; };
 		D0E023D9480CCD36C86075ACB77A130D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */; };
-		D4638D0CF3B6F5D4AA6290C0EB8E6D7C /* Lerp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50EDBBF43D9AC0265C8DEC78A7CD6BA7 /* Lerp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8F5B48F93E12B51A9C550E1ECBAFFDA /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33B6EB6E6030545F551F2E461D13CC9 /* ConstraintAttributes.swift */; };
-		DA964B413DF45C9320589A8C3F45998C /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B73C69720A5436383E84B6C6E018D /* Constraint.swift */; };
-		E1FF5C97B363D19ADD3B9EFC44D00F27 /* Degrad-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71223546099CFE90C5601F86728DAD5E /* Degrad-dummy.m */; };
+		D4638D0CF3B6F5D4AA6290C0EB8E6D7C /* Lerp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F9378891674577E6117CAC4116515F2 /* Lerp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8F5B48F93E12B51A9C550E1ECBAFFDA /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3884720147E6C1EBC0490997EA52FE41 /* ConstraintAttributes.swift */; };
+		DA964B413DF45C9320589A8C3F45998C /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FB7AF02412DF32309BB14C72E9575 /* Constraint.swift */; };
+		E1FF5C97B363D19ADD3B9EFC44D00F27 /* Degrad-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 85153F56AAB77D1FD63DF76DBA4F9848 /* Degrad-dummy.m */; };
 		E9E256E9E8B7FC66F8466328A76B1506 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */; };
-		EFFF8C246FE50CA55E74CC946E172E83 /* MultitouchGestureRecognizer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED410C87C9D2ACB485D1BD52BB32C65F /* MultitouchGestureRecognizer-dummy.m */; };
-		F46A8B13E046D3EFA58ACA7D2F7D20BD /* ProtonomeRoundedViews-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ACDDABD50E33941903E01533330EF8D3 /* ProtonomeRoundedViews-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFFF8C246FE50CA55E74CC946E172E83 /* MultitouchGestureRecognizer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39252AED53B12FB9CA8687979356C2EF /* MultitouchGestureRecognizer-dummy.m */; };
+		F46A8B13E046D3EFA58ACA7D2F7D20BD /* ProtonomeRoundedViews-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 825E0E295DCFF3583864C9453984C1C6 /* ProtonomeRoundedViews-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F53A746B78CBD6868DB9D9B629465D18 /* ProtonomeAudioKitControls-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6264E121D711E7E5C07406DCE712479A /* ProtonomeAudioKitControls-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9CB61DEE1EAFCA7F47520AE2B11805A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */; };
-		F9D7E158C013E14A5588EA4BC7D33FBA /* Parity-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC19C600BBF450B44373CA4181D9A95E /* Parity-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD732FC497D77D82DFE0DAA622D95031 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF148B0E43CB2F916F225D4EF645E4E /* RoundedView.swift */; };
+		F9D7E158C013E14A5588EA4BC7D33FBA /* Parity-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 81B8D96517F2399AC2602AE9AE68F1F0 /* Parity-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD732FC497D77D82DFE0DAA622D95031 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922AB97A0E1B7B1614DC7015342FDC6F /* RoundedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,129 +168,128 @@
 
 /* Begin PBXFileReference section */
 		02014754F56E8DD7844D87A4486C2420 /* ParameterScale.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParameterScale.swift; sourceTree = "<group>"; };
-		02FEDBAF3380F08D2015AF2FAA25B1A9 /* ProtonomeRoundedViews-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ProtonomeRoundedViews-prefix.pch"; sourceTree = "<group>"; };
-		043DFBC416A1CCCFC33097D3EB47F32E /* Parity-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parity-prefix.pch"; sourceTree = "<group>"; };
-		06653117A4B5483745BEDCED3D812877 /* Persistable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Persistable.xcconfig; sourceTree = "<group>"; };
-		08732529D0F97FA2E68CFF18D5EF4B32 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09600B579B77DACDBBB83A921A9413F9 /* ProtonomeRoundedViews.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ProtonomeRoundedViews.xcconfig; sourceTree = "<group>"; };
-		09657A0CED80A91C4DB0D2425B5E7396 /* Bezzy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bezzy.xcconfig; sourceTree = "<group>"; };
-		0F92DE094C71903BE81CD96157662B74 /* Bezzy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bezzy.swift; sourceTree = "<group>"; };
-		0FE331B0F095F5F898FD4A3D28D5CF03 /* EdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EdgeInsets.swift; path = Source/EdgeInsets.swift; sourceTree = "<group>"; };
-		100CBF7897052B24CAD9E59D5391C002 /* ABTrigger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABTrigger.h; path = Audiobus/ABTrigger.h; sourceTree = "<group>"; };
-		108E03C9612E6FE01127671FEEAC7FAE /* Lerp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Lerp-dummy.m"; sourceTree = "<group>"; };
+		0567DB6A2C86EC46FF9F0B26DA0E6B9D /* ABLocalPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABLocalPort.h; path = Audiobus/ABLocalPort.h; sourceTree = "<group>"; };
+		0897FD10A019E6F21DE1F996653C836D /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
+		0AC635F151058E28B533F4D126995D38 /* ProtonomeRoundedViews.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ProtonomeRoundedViews.modulemap; sourceTree = "<group>"; };
+		0D3EB2174FCB3BBE7C37C180FD9A4142 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D6198CD8FD8A62E5B78F0780EEB04C3 /* Degrad-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Degrad-prefix.pch"; sourceTree = "<group>"; };
 		119D6BFC3FB9918E9A5954410D0C90C6 /* MultitouchGestureRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MultitouchGestureRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		122652C1F3C5574BA4A41E1A27F4B937 /* Bezzy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bezzy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		151E28025D3EE9211295480F12436F16 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
+		13122B71B2E28F8944FA002B614A9D68 /* Parity.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Parity.xcconfig; sourceTree = "<group>"; };
+		14DF86564BA077C60557BE0EDFEE1F16 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		17629ABC77E518B8E10055150D6B5C59 /* Pods-HOWL-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HOWL-resources.sh"; sourceTree = "<group>"; };
-		17F3924750B11370E71DE52608E981A6 /* Bezzy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bezzy-umbrella.h"; sourceTree = "<group>"; };
-		1C151B475C57E18DE907281C82C5DE31 /* Degrad-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Degrad-umbrella.h"; sourceTree = "<group>"; };
+		1996780C7756848DB4D6202764256B76 /* ABReceiverPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABReceiverPort.h; path = Audiobus/ABReceiverPort.h; sourceTree = "<group>"; };
+		1C2BDEC362806C81B3EEA88A6F9A5889 /* Parity-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parity-prefix.pch"; sourceTree = "<group>"; };
 		1CBF723938E6872311BC8B9150AB4032 /* DialControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DialControl.swift; sourceTree = "<group>"; };
-		1E7293ED02EF08FCDC64E94381BC9A60 /* Degrad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Degrad.swift; sourceTree = "<group>"; };
 		2418F03A5FA5154DA34567A1012F24A4 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		257D0FBEC82B42FA5BAEF69E781C2EED /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = iOS/AudioKit.framework; sourceTree = "<group>"; };
-		292B9E37C039A6CFE42EDF9C748958AA /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
-		29400DD2608681DC817CCB3246B016FE /* Bezzy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bezzy.modulemap; sourceTree = "<group>"; };
-		2B3441A7DFDB26C5E4D966C99999E005 /* Persistable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Persistable-prefix.pch"; sourceTree = "<group>"; };
-		2B5A9CF726A88A987266F568D44DBFD6 /* View+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+SnapKit.swift"; path = "Source/View+SnapKit.swift"; sourceTree = "<group>"; };
+		24708B2EE089E32C5BD2C0AE6F581E35 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A09ADE451029FB3AC261C60B622C0A5 /* MultitouchGestureRecognizer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MultitouchGestureRecognizer.xcconfig; sourceTree = "<group>"; };
 		2B8802C7D521E41BB6A1140BE7D8C495 /* AudioControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioControl.swift; sourceTree = "<group>"; };
+		2B9CAD214A21712E6225EE4E9B756ABD /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		2FAE52B3CCBC07DB770A934F29D6BD72 /* Pods-HOWL-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HOWL-acknowledgements.plist"; sourceTree = "<group>"; };
+		31EC8A76825AB9F55ACC4472A0D70576 /* Degrad.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Degrad.modulemap; sourceTree = "<group>"; };
 		3395073B05D937B075242693A38D60D9 /* Lerp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lerp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		342727E1223A90D39DECCA3CD3778FF9 /* Persistable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Persistable-dummy.m"; sourceTree = "<group>"; };
+		3398C9300ADD5D79317904F5E09D1497 /* ABSenderPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABSenderPort.h; path = Audiobus/ABSenderPort.h; sourceTree = "<group>"; };
+		3884720147E6C1EBC0490997EA52FE41 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
+		39252AED53B12FB9CA8687979356C2EF /* MultitouchGestureRecognizer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MultitouchGestureRecognizer-dummy.m"; sourceTree = "<group>"; };
+		3AA9F1C608BB09A0758C9CF4AF568EDB /* ABMultiStreamBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABMultiStreamBuffer.h; path = Audiobus/ABMultiStreamBuffer.h; sourceTree = "<group>"; };
+		3AB5D7591973DB437D68E42034EC2A67 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
+		3C37B569D87DAE47116B1D0C0A06711F /* SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnapKit.swift; path = Source/SnapKit.swift; sourceTree = "<group>"; };
+		3E220937D8156E79A976B3A0D2DC4481 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
 		3FE1DE772EF0B0D002AAF18A8BF11824 /* ProtonomeAudioKitControls.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ProtonomeAudioKitControls.modulemap; sourceTree = "<group>"; };
-		40C3A368196D689D7D41976BD6861912 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
+		40448449422B6186FB3C6FB95D477421 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40F9B85BC6B85573E6B5E8F80C9B0BB8 /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ViewController+SnapKit.swift"; path = "Source/ViewController+SnapKit.swift"; sourceTree = "<group>"; };
 		4185930EF1A9004F8791D1EC171B61A9 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4586C4CA6E1264E37A20DF5AF986459D /* ABReceiverPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABReceiverPort.h; path = Audiobus/ABReceiverPort.h; sourceTree = "<group>"; };
-		475F72A5D075BF1A324B462C60938896 /* Persistable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Persistable.modulemap; sourceTree = "<group>"; };
+		4270F30B5A7BB0A7FFF2659A0AA3F834 /* Parity.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Parity.modulemap; sourceTree = "<group>"; };
 		4879C379CEA4E5FBF63044BF29E543E8 /* Bezzy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bezzy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C517D5C0E89D936A0973FE55F54B522 /* ABCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABCommon.h; path = Audiobus/ABCommon.h; sourceTree = "<group>"; };
-		4C622D8E4AD9723082D22B31B8D54202 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496EBAEC011BBCDBCC681B5AA0D48FD1 /* MultitouchGestureRecognizer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MultitouchGestureRecognizer-prefix.pch"; sourceTree = "<group>"; };
+		4AB7D4F6DBDC602BFC9EC7CC383BC969 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D1C4CF2D809126D7A1EA40EBE64A4D3 /* Pods-HOWL-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HOWL-dummy.m"; sourceTree = "<group>"; };
-		4D2D10F69D2B3E1ED2598D8DB1557EF6 /* Bezzy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bezzy-dummy.m"; sourceTree = "<group>"; };
-		4DA996EEB6D09068326E643B4C3BA6F4 /* MultitouchGestureRecognizer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MultitouchGestureRecognizer-umbrella.h"; sourceTree = "<group>"; };
+		4DD28A28ABAA5AC1162325A727D1F3BD /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		501DFBE91B4D8A11FC2102DBBBD6B071 /* PickerControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PickerControl.swift; sourceTree = "<group>"; };
-		50EDBBF43D9AC0265C8DEC78A7CD6BA7 /* Lerp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Lerp-umbrella.h"; sourceTree = "<group>"; };
-		51EC58C3C4E06BFB66D233042E46B36B /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
-		5900010B13D949B0A3594FB084363519 /* ProtonomeRoundedViews-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ProtonomeRoundedViews-dummy.m"; sourceTree = "<group>"; };
+		5401738723263717DE87443C88B6BCEA /* Persistable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Persistable-dummy.m"; sourceTree = "<group>"; };
+		54F5A9EAA56EE68019BAD20BBFCE1E4C /* RoundedButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = Classes/RoundedButton.swift; sourceTree = "<group>"; };
+		57CE282118FBA26F7DB7FADAFEE2595E /* ProtonomeRoundedViews-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ProtonomeRoundedViews-prefix.pch"; sourceTree = "<group>"; };
+		5AB5AF449F7ED91BBBE860F4C14749CA /* Bezzy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bezzy.modulemap; sourceTree = "<group>"; };
 		5DB6CF373C99932C368F927FF43F17F4 /* UIColor+Protonome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Protonome.swift"; sourceTree = "<group>"; };
 		5E4104C49ED4C64F40BBDE61E9DA0556 /* Degrad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Degrad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6117B0C40633469DA4F71CA8B5EF2A86 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6264E121D711E7E5C07406DCE712479A /* ProtonomeAudioKitControls-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ProtonomeAudioKitControls-umbrella.h"; sourceTree = "<group>"; };
 		62C7B0B0C87A64EBFC070CE305CCA7A5 /* ProtonomeRoundedViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProtonomeRoundedViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		69E764138116FE5A8E0240B3315DF4CF /* libAudiobus.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAudiobus.a; sourceTree = "<group>"; };
-		6FF148B0E43CB2F916F225D4EF645E4E /* RoundedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RoundedView.swift; path = Classes/RoundedView.swift; sourceTree = "<group>"; };
-		70FD26B5DCDC08C8B3311BEE10FADCB2 /* ProtonomeRoundedViews.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ProtonomeRoundedViews.modulemap; sourceTree = "<group>"; };
-		71223546099CFE90C5601F86728DAD5E /* Degrad-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Degrad-dummy.m"; sourceTree = "<group>"; };
-		764F8D41CC76281181FF2248F1A61A26 /* MultitouchGestureRecognizer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MultitouchGestureRecognizer.xcconfig; sourceTree = "<group>"; };
+		6577D865E8CA84DF1F3D5234DCC7EEDC /* ProtonomeRoundedViews-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ProtonomeRoundedViews-dummy.m"; sourceTree = "<group>"; };
+		6A518B540D0C2B5FC84AF6B783653987 /* ABFilterPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABFilterPort.h; path = Audiobus/ABFilterPort.h; sourceTree = "<group>"; };
+		6C83CA27383CB3D550D0D8B67C1DB04A /* ABAudioUnitFader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABAudioUnitFader.h; path = Audiobus/ABAudioUnitFader.h; sourceTree = "<group>"; };
+		6F87B1425B981C4F28D87D2C2C55606B /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
+		6F958F4FE4F25CF5BD990ECC2D6C8CD9 /* Lerp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Lerp.xcconfig; sourceTree = "<group>"; };
+		7685EA6D377240DE68413DACF413A6D6 /* EdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EdgeInsets.swift; path = Source/EdgeInsets.swift; sourceTree = "<group>"; };
+		770BC85A251FD814AEC3ACF307F77A50 /* View+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+SnapKit.swift"; path = "Source/View+SnapKit.swift"; sourceTree = "<group>"; };
 		78E2767AACC7D158A2C9FB490364BAA2 /* Pods_HOWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HOWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7955AD670273BA1074758906417CD834 /* ABAudiobusController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABAudiobusController.h; path = Audiobus/ABAudiobusController.h; sourceTree = "<group>"; };
-		7B97B3220C70DC93A3210FA3567F26E9 /* Degrad.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Degrad.modulemap; sourceTree = "<group>"; };
 		7DAB474217494B273D6BA0D6D9E1C213 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		835BF7141118878E3D01A2E24C7EDD3A /* RoundedLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RoundedLabel.swift; path = Classes/RoundedLabel.swift; sourceTree = "<group>"; };
+		7DF1CB30F876646CFD4B3ED603B5CEDA /* Persistable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Persistable-prefix.pch"; sourceTree = "<group>"; };
+		7F9378891674577E6117CAC4116515F2 /* Lerp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Lerp-umbrella.h"; sourceTree = "<group>"; };
+		809ED2C54700C2E07DCF606B3AEEF07E /* Degrad.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Degrad.xcconfig; sourceTree = "<group>"; };
+		81B8D96517F2399AC2602AE9AE68F1F0 /* Parity-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parity-umbrella.h"; sourceTree = "<group>"; };
+		825E0E295DCFF3583864C9453984C1C6 /* ProtonomeRoundedViews-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ProtonomeRoundedViews-umbrella.h"; sourceTree = "<group>"; };
+		833BDADF3B4571424B20022CA53BC712 /* MultitouchGestureRecognizer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MultitouchGestureRecognizer.modulemap; sourceTree = "<group>"; };
+		84D058E443E60D008A1EAB2A7EA95BBD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85153F56AAB77D1FD63DF76DBA4F9848 /* Degrad-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Degrad-dummy.m"; sourceTree = "<group>"; };
+		85491D66589E351936D4655134570075 /* Audiobus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Audiobus.h; path = Audiobus/Audiobus.h; sourceTree = "<group>"; };
 		87112A0B7F3F383852D8626FD9A4D4B1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		87365B7A3BDB0AD2AE2C0F1F4D3D3393 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		87C021E510334D5035879FBBA415CD7E /* Parity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B5C4612452632775E7E89C43F918E57 /* ABPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABPort.h; path = Audiobus/ABPort.h; sourceTree = "<group>"; };
-		8C83A9A5532644255F44AF851E9AF0F6 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
-		8D85665EEF14BAD1D6B580306C1557EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8DF03477CEDBE4C1DABD3198FD5FBBF7 /* Persistable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Persistable-umbrella.h"; sourceTree = "<group>"; };
-		906D3379C0CA42C8BF8FA9EB8BA07622 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
+		897696390B85906EDC282978DBA4D575 /* Lerp-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Lerp-prefix.pch"; sourceTree = "<group>"; };
 		90AE3856D24301CE5CE699D6B39A661A /* ProtonomeAudioKitControls-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ProtonomeAudioKitControls-dummy.m"; sourceTree = "<group>"; };
-		92311872A25927151F1C0EDF23ED17C0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91A3756089242B6769BF8D74E3B8B8E0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		922AB97A0E1B7B1614DC7015342FDC6F /* RoundedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RoundedView.swift; path = Classes/RoundedView.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9526DFC435589DD9D7F84FA8BA257672 /* Audiobus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Audiobus.h; path = Audiobus/Audiobus.h; sourceTree = "<group>"; };
-		977CD6AC59C727B12E4D1688CC1AE033 /* MultitouchGestureRecognizer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MultitouchGestureRecognizer.modulemap; sourceTree = "<group>"; };
-		98A462D8632ABFCE210D5BF3E5EC1127 /* Degrad.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Degrad.xcconfig; sourceTree = "<group>"; };
-		9AB8DBCCAA54B0B44DBA9F0CC2901269 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
-		9AD59FB36FC21178973EA77BAABC8601 /* Bezzy-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bezzy-prefix.pch"; sourceTree = "<group>"; };
-		A42E1696D4B4CC83EB326BF07E159C4B /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ViewController+SnapKit.swift"; path = "Source/ViewController+SnapKit.swift"; sourceTree = "<group>"; };
-		A79FBA325471716F21AD697273CFB6E6 /* Parity.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Parity.xcconfig; sourceTree = "<group>"; };
-		A84C83DE62F6983B5C5C63BCC636F76C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94D6E8605392C8C071C9EB58E7AE88A9 /* Bezzy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bezzy-umbrella.h"; sourceTree = "<group>"; };
+		980A85528886C78BCE38ABE663A39C2E /* ABTrigger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABTrigger.h; path = Audiobus/ABTrigger.h; sourceTree = "<group>"; };
+		99A1AE495C940A6667227644E5961FFC /* ABPeer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABPeer.h; path = Audiobus/ABPeer.h; sourceTree = "<group>"; };
+		9C0857CD100BD8950D4CEFFB86FF2B96 /* Bezzy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bezzy.xcconfig; sourceTree = "<group>"; };
+		9D008C56D32393DA74AE37F6A2C06CD6 /* Degrad-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Degrad-umbrella.h"; sourceTree = "<group>"; };
+		A009AEE421E588939A447A5D5AEFE6B7 /* MultitouchGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MultitouchGestureRecognizer.swift; sourceTree = "<group>"; };
+		A39CCEA06B6322A052AFE06457159478 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		A91CEA06DC9911C768A8836F3C426B31 /* Degrad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Degrad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A95361F634989A9B3B9E9AC418E98716 /* Parity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Parity.swift; sourceTree = "<group>"; };
-		A9BCB59F90F5849B50650124C96150FE /* Lerp-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Lerp-prefix.pch"; sourceTree = "<group>"; };
-		AA401F460C0E65577DE3F1A03C854CD2 /* RoundedButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = Classes/RoundedButton.swift; sourceTree = "<group>"; };
-		ACDDABD50E33941903E01533330EF8D3 /* ProtonomeRoundedViews-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ProtonomeRoundedViews-umbrella.h"; sourceTree = "<group>"; };
+		A95BF878FD520FACF2EEE446E5EF6A67 /* Degrad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Degrad.swift; sourceTree = "<group>"; };
+		AA76BCA15C75363E4BE74BAA0F681E4E /* Parity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Parity.swift; sourceTree = "<group>"; };
+		AAEBBFDB571E649ABF3F2FDBE6C7384A /* ABCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABCommon.h; path = Audiobus/ABCommon.h; sourceTree = "<group>"; };
 		ACFAE8ABF9C9A0B1D79E09A633D78DC1 /* Pods-HOWL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HOWL.debug.xcconfig"; sourceTree = "<group>"; };
-		ADE18DB3FD90015F2C1CED7CF1E978FB /* Persistable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
-		AED4DBF6CE6F52B90D533E9314BFBB3A /* ABLocalPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABLocalPort.h; path = Audiobus/ABLocalPort.h; sourceTree = "<group>"; };
-		B0850D6451751118EB17D587B7E2B1E7 /* Degrad-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Degrad-prefix.pch"; sourceTree = "<group>"; };
-		B1DAF9B0280913B717F0BA5C5DB6D288 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3EA05FBB05B864B883EA02B06CD1DE6 /* Lerp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
-		B774EBF8BD3C3408C95CCAD6E74BAB87 /* ABSenderPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABSenderPort.h; path = Audiobus/ABSenderPort.h; sourceTree = "<group>"; };
-		B939230BACF804125F97DD891F51AB40 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
+		AD5A15776A8A1BB55045EFD99EC9FCAF /* libAudiobus.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAudiobus.a; sourceTree = "<group>"; };
+		AD7E4EA1F3DF1E593F4EC81EAA023BA3 /* Lerp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Lerp.modulemap; sourceTree = "<group>"; };
+		AEDE4C0989A8AFBCDF77D7A8A6B587C1 /* Bezzy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bezzy.swift; sourceTree = "<group>"; };
+		B2147007E2039BDA5AE98E2BE9CF9812 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
+		B2297476BD8F852315E0B02A88A209F7 /* Persistable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Persistable.modulemap; sourceTree = "<group>"; };
+		B9FCE1F06DAE4A11B087D906356F25AF /* RoundedLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RoundedLabel.swift; path = Classes/RoundedLabel.swift; sourceTree = "<group>"; };
+		BA7FDA55145C91D630A3F743F3DC3B45 /* Bezzy-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bezzy-prefix.pch"; sourceTree = "<group>"; };
 		BA8F5AA1B8A8F33DD2CBA7637400D6FB /* Pods-HOWL.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HOWL.modulemap"; sourceTree = "<group>"; };
+		BB213C6F9C5E33E60D90BD8846CC4DBF /* Persistable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
 		BBA0931556C5833FD580065D30DB4EDD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BDA25387A881B03F73415BB2C1E34D11 /* ABMultiStreamBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABMultiStreamBuffer.h; path = Audiobus/ABMultiStreamBuffer.h; sourceTree = "<group>"; };
-		C01D0F9FF3E123CFD1F5BB58EF833E51 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
-		C106A13D8B6C2E1C82AFA533F7604652 /* ABFilterPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABFilterPort.h; path = Audiobus/ABFilterPort.h; sourceTree = "<group>"; };
-		C3E026FB7D18C01B2E7991A97E83863E /* Parity.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Parity.modulemap; sourceTree = "<group>"; };
+		BCE01B3C571FC73FBC28BED32158BCF6 /* Persistable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Persistable-umbrella.h"; sourceTree = "<group>"; };
+		BD32FA3FD0B097BA977E0CFD75A9CC0B /* Lerp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
+		C070B5F359879C5BD334E10C9EFE7FFF /* ABButtonTrigger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABButtonTrigger.h; path = Audiobus/ABButtonTrigger.h; sourceTree = "<group>"; };
 		C51DA580F2E70C795891F17D9AA4504A /* SliderControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SliderControl.swift; sourceTree = "<group>"; };
 		C6A820CFE7805A427A54C402C39531A9 /* Persistable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Persistable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C77A708CE71F374DAF6AECED2DF376F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7BD1D13A00F46EC307937369B6C0E7F /* ProtonomeAudioKitControls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProtonomeAudioKitControls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98A59A5041DD141827D40E08B7CD25D /* Pods-HOWL-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HOWL-umbrella.h"; sourceTree = "<group>"; };
+		C9C60E0B29129165D40A2BCA7699AFE8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBAF4F5973C9F282860BDF1E60CAC5CB /* Pods-HOWL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HOWL.release.xcconfig"; sourceTree = "<group>"; };
 		CF0A3AE6E7A533B03EDA5C5B60B9AA7A /* ParameterFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParameterFormatter.swift; sourceTree = "<group>"; };
-		D043148F129D10380E137344D85CC5C5 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
 		D18432583C3F9DBD8D08F1817357625E /* AudioPlot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioPlot.swift; sourceTree = "<group>"; };
+		D3416AEF3D1D18B13B0D02FA506A91FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3FC5C3CFC2C25CCEF157D9EC78567CF /* Lerp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Lerp-dummy.m"; sourceTree = "<group>"; };
+		D5C5F72AD50B01BABEE18684ED38FCF6 /* ProtonomeRoundedViews.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ProtonomeRoundedViews.xcconfig; sourceTree = "<group>"; };
+		DB9FB7AF02412DF32309BB14C72E9575 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		DE6385F24D16FA6FBA0D9A25770C0EC9 /* Pods-HOWL-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HOWL-frameworks.sh"; sourceTree = "<group>"; };
-		DFC891F4B36C0D1DD21976EFBFA8F716 /* Lerp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Lerp.xcconfig; sourceTree = "<group>"; };
-		DFEBDCFF2ECFFA140B296430315A759B /* MultitouchGestureRecognizer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MultitouchGestureRecognizer-prefix.pch"; sourceTree = "<group>"; };
 		E0B6EDE38E2A6EE9D481D3136359B95F /* ProtonomeAudioKitControls-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ProtonomeAudioKitControls-prefix.pch"; sourceTree = "<group>"; };
-		E4474F91DFD4D82834BB473D3AD27D47 /* ABPeer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABPeer.h; path = Audiobus/ABPeer.h; sourceTree = "<group>"; };
-		E5F919ED98977541BF0764AD1E56558B /* SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnapKit.swift; path = Source/SnapKit.swift; sourceTree = "<group>"; };
-		E60D58A3C87437FEF9FC7A541576FA22 /* ABButtonTrigger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABButtonTrigger.h; path = Audiobus/ABButtonTrigger.h; sourceTree = "<group>"; };
+		E41E4418046DF628043F9FA0ECD2584B /* ABAudiobusController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABAudiobusController.h; path = Audiobus/ABAudiobusController.h; sourceTree = "<group>"; };
+		E59E9BDD5D58450E333B8E7225A7F56D /* MultitouchGestureRecognizer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MultitouchGestureRecognizer-umbrella.h"; sourceTree = "<group>"; };
+		E6CEC73146EDFFD311EFA010E45A46A3 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
 		E82F7962765BA08BA856B1E8954C4706 /* Pods-HOWL-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HOWL-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EAF1EFF4BAC891CEA1F4C9496F1362FB /* ABAudioUnitFader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABAudioUnitFader.h; path = Audiobus/ABAudioUnitFader.h; sourceTree = "<group>"; };
 		EB4B72D70CD2FBF853A99AA6C3F4C677 /* Lerp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lerp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC19C600BBF450B44373CA4181D9A95E /* Parity-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parity-umbrella.h"; sourceTree = "<group>"; };
-		ED410C87C9D2ACB485D1BD52BB32C65F /* MultitouchGestureRecognizer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MultitouchGestureRecognizer-dummy.m"; sourceTree = "<group>"; };
-		F333DD04C4149053A83A9D57EF19DB06 /* Lerp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Lerp.modulemap; sourceTree = "<group>"; };
-		F33B6EB6E6030545F551F2E461D13CC9 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
-		F45B73C69720A5436383E84B6C6E018D /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
-		F8D7F7336E369A68EC7C74984BE2BC11 /* MultitouchGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MultitouchGestureRecognizer.swift; sourceTree = "<group>"; };
+		EE336B24AD1491E024E1B497551AB05B /* Bezzy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bezzy-dummy.m"; sourceTree = "<group>"; };
+		EEAC61CE3E2F638419F5D0DCB4A340D4 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
+		F4EC038A30858EA829BF4A8FE0981686 /* Persistable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Persistable.xcconfig; sourceTree = "<group>"; };
+		F7CB05AB6959E01E36FD59E4FC9D3D6B /* Parity-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Parity-dummy.m"; sourceTree = "<group>"; };
 		F948FAD6D34B3D6C1DBC6D320EFC0C84 /* ProtonomeAudioKitControls.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ProtonomeAudioKitControls.xcconfig; sourceTree = "<group>"; };
-		FA5CDE8421D3A0F18A5F93EBF6979549 /* Parity-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Parity-dummy.m"; sourceTree = "<group>"; };
+		F9FE964E6A7915110D7FE2B53A4948FE /* ABPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABPort.h; path = Audiobus/ABPort.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,66 +380,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0239162A5DFFD4D3907C386C1544B804 /* Persistable */ = {
+		081858C2A250AE563A8B1D7BB6D4E91F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				ADE18DB3FD90015F2C1CED7CF1E978FB /* Persistable.swift */,
-				23C8972C92EEC51E419E962604C9C3CA /* Support Files */,
-			);
-			path = Persistable;
-			sourceTree = "<group>";
-		};
-		1AC94B4AC0180DCF58726844671C837E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C77A708CE71F374DAF6AECED2DF376F5 /* Info.plist */,
-				977CD6AC59C727B12E4D1688CC1AE033 /* MultitouchGestureRecognizer.modulemap */,
-				764F8D41CC76281181FF2248F1A61A26 /* MultitouchGestureRecognizer.xcconfig */,
-				ED410C87C9D2ACB485D1BD52BB32C65F /* MultitouchGestureRecognizer-dummy.m */,
-				DFEBDCFF2ECFFA140B296430315A759B /* MultitouchGestureRecognizer-prefix.pch */,
-				4DA996EEB6D09068326E643B4C3BA6F4 /* MultitouchGestureRecognizer-umbrella.h */,
+				4AB7D4F6DBDC602BFC9EC7CC383BC969 /* Info.plist */,
+				833BDADF3B4571424B20022CA53BC712 /* MultitouchGestureRecognizer.modulemap */,
+				2A09ADE451029FB3AC261C60B622C0A5 /* MultitouchGestureRecognizer.xcconfig */,
+				39252AED53B12FB9CA8687979356C2EF /* MultitouchGestureRecognizer-dummy.m */,
+				496EBAEC011BBCDBCC681B5AA0D48FD1 /* MultitouchGestureRecognizer-prefix.pch */,
+				E59E9BDD5D58450E333B8E7225A7F56D /* MultitouchGestureRecognizer-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MultitouchGestureRecognizer";
 			sourceTree = "<group>";
 		};
-		23C8972C92EEC51E419E962604C9C3CA /* Support Files */ = {
+		08638C7BF3964F20CE8ED90FDD2B4689 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4C622D8E4AD9723082D22B31B8D54202 /* Info.plist */,
-				475F72A5D075BF1A324B462C60938896 /* Persistable.modulemap */,
-				06653117A4B5483745BEDCED3D812877 /* Persistable.xcconfig */,
-				342727E1223A90D39DECCA3CD3778FF9 /* Persistable-dummy.m */,
-				2B3441A7DFDB26C5E4D966C99999E005 /* Persistable-prefix.pch */,
-				8DF03477CEDBE4C1DABD3198FD5FBBF7 /* Persistable-umbrella.h */,
+				91A3756089242B6769BF8D74E3B8B8E0 /* Info.plist */,
+				B2297476BD8F852315E0B02A88A209F7 /* Persistable.modulemap */,
+				F4EC038A30858EA829BF4A8FE0981686 /* Persistable.xcconfig */,
+				5401738723263717DE87443C88B6BCEA /* Persistable-dummy.m */,
+				7DF1CB30F876646CFD4B3ED603B5CEDA /* Persistable-prefix.pch */,
+				BCE01B3C571FC73FBC28BED32158BCF6 /* Persistable-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Persistable";
 			sourceTree = "<group>";
 		};
-		298C7098F75793F7E872C98A55EDAB5C /* Support Files */ = {
+		0DB0022C0BAC3A216797B4D54E0A27BC /* Bezzy */ = {
 			isa = PBXGroup;
 			children = (
-				B1DAF9B0280913B717F0BA5C5DB6D288 /* Info.plist */,
-				C3E026FB7D18C01B2E7991A97E83863E /* Parity.modulemap */,
-				A79FBA325471716F21AD697273CFB6E6 /* Parity.xcconfig */,
-				FA5CDE8421D3A0F18A5F93EBF6979549 /* Parity-dummy.m */,
-				043DFBC416A1CCCFC33097D3EB47F32E /* Parity-prefix.pch */,
-				EC19C600BBF450B44373CA4181D9A95E /* Parity-umbrella.h */,
+				AEDE4C0989A8AFBCDF77D7A8A6B587C1 /* Bezzy.swift */,
+				D6FF99C9FA496F71CE36CC183478B1DE /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Parity";
-			sourceTree = "<group>";
-		};
-		2CD484C07F7410ECBE82D8F52198885B /* ProtonomeRoundedViews */ = {
-			isa = PBXGroup;
-			children = (
-				AA401F460C0E65577DE3F1A03C854CD2 /* RoundedButton.swift */,
-				835BF7141118878E3D01A2E24C7EDD3A /* RoundedLabel.swift */,
-				6FF148B0E43CB2F916F225D4EF645E4E /* RoundedView.swift */,
-				9494D5EA6AD0E215FC4829F370BE0762 /* Support Files */,
-			);
-			path = ProtonomeRoundedViews;
+			path = Bezzy;
 			sourceTree = "<group>";
 		};
 		2D8A8BD2663AC9E4EAC0EAFC31E07ABE /* Targets Support Files */ = {
@@ -451,26 +425,46 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		2DE70D2B1C1BF013802ED9658D5DD336 /* Support Files */ = {
+		38C06CCCE6AB5867E6E41BBB4BC651C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				08732529D0F97FA2E68CFF18D5EF4B32 /* Info.plist */,
-				C01D0F9FF3E123CFD1F5BB58EF833E51 /* SnapKit.modulemap */,
-				151E28025D3EE9211295480F12436F16 /* SnapKit.xcconfig */,
-				87365B7A3BDB0AD2AE2C0F1F4D3D3393 /* SnapKit-dummy.m */,
-				8C83A9A5532644255F44AF851E9AF0F6 /* SnapKit-prefix.pch */,
-				292B9E37C039A6CFE42EDF9C748958AA /* SnapKit-umbrella.h */,
+				AD5A15776A8A1BB55045EFD99EC9FCAF /* libAudiobus.a */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SnapKit";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3366A81EDF607FC185E1EE84BE21E41E /* AudioKit */ = {
+		392F1BE89C2240F46BC7332081E0212F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				711C2E22CAB27F25657DD73DD6B297C9 /* Frameworks */,
+				C9C60E0B29129165D40A2BCA7699AFE8 /* Info.plist */,
+				4270F30B5A7BB0A7FFF2659A0AA3F834 /* Parity.modulemap */,
+				13122B71B2E28F8944FA002B614A9D68 /* Parity.xcconfig */,
+				F7CB05AB6959E01E36FD59E4FC9D3D6B /* Parity-dummy.m */,
+				1C2BDEC362806C81B3EEA88A6F9A5889 /* Parity-prefix.pch */,
+				81B8D96517F2399AC2602AE9AE68F1F0 /* Parity-umbrella.h */,
 			);
-			path = AudioKit;
+			name = "Support Files";
+			path = "../Target Support Files/Parity";
+			sourceTree = "<group>";
+		};
+		41ADC9308398E79FFBCF76375162DA12 /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				DB9FB7AF02412DF32309BB14C72E9575 /* Constraint.swift */,
+				3884720147E6C1EBC0490997EA52FE41 /* ConstraintAttributes.swift */,
+				3E220937D8156E79A976B3A0D2DC4481 /* ConstraintDescription.swift */,
+				3AB5D7591973DB437D68E42034EC2A67 /* ConstraintItem.swift */,
+				B2147007E2039BDA5AE98E2BE9CF9812 /* ConstraintMaker.swift */,
+				2B9CAD214A21712E6225EE4E9B756ABD /* ConstraintRelation.swift */,
+				E6CEC73146EDFFD311EFA010E45A46A3 /* Debugging.swift */,
+				7685EA6D377240DE68413DACF413A6D6 /* EdgeInsets.swift */,
+				A39CCEA06B6322A052AFE06457159478 /* LayoutConstraint.swift */,
+				3C37B569D87DAE47116B1D0C0A06711F /* SnapKit.swift */,
+				770BC85A251FD814AEC3ACF307F77A50 /* View+SnapKit.swift */,
+				40F9B85BC6B85573E6B5E8F80C9B0BB8 /* ViewController+SnapKit.swift */,
+				F104FC95F86ADB1A274D240F61C6BC86 /* Support Files */,
+			);
+			path = SnapKit;
 			sourceTree = "<group>";
 		};
 		4B98A475B636CDBF0490D61FC4965256 /* Categories */ = {
@@ -481,35 +475,6 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		5CE5CB4BC445596ABC85FF914EB57E91 /* Parity */ = {
-			isa = PBXGroup;
-			children = (
-				A95361F634989A9B3B9E9AC418E98716 /* Parity.swift */,
-				298C7098F75793F7E872C98A55EDAB5C /* Support Files */,
-			);
-			path = Parity;
-			sourceTree = "<group>";
-		};
-		5EB33D30405D461E788B93130D83B574 /* SnapKit */ = {
-			isa = PBXGroup;
-			children = (
-				F45B73C69720A5436383E84B6C6E018D /* Constraint.swift */,
-				F33B6EB6E6030545F551F2E461D13CC9 /* ConstraintAttributes.swift */,
-				9AB8DBCCAA54B0B44DBA9F0CC2901269 /* ConstraintDescription.swift */,
-				40C3A368196D689D7D41976BD6861912 /* ConstraintItem.swift */,
-				51EC58C3C4E06BFB66D233042E46B36B /* ConstraintMaker.swift */,
-				906D3379C0CA42C8BF8FA9EB8BA07622 /* ConstraintRelation.swift */,
-				D043148F129D10380E137344D85CC5C5 /* Debugging.swift */,
-				0FE331B0F095F5F898FD4A3D28D5CF03 /* EdgeInsets.swift */,
-				B939230BACF804125F97DD891F51AB40 /* LayoutConstraint.swift */,
-				E5F919ED98977541BF0764AD1E56558B /* SnapKit.swift */,
-				2B5A9CF726A88A987266F568D44DBFD6 /* View+SnapKit.swift */,
-				A42E1696D4B4CC83EB326BF07E159C4B /* ViewController+SnapKit.swift */,
-				2DE70D2B1C1BF013802ED9658D5DD336 /* Support Files */,
-			);
-			path = SnapKit;
-			sourceTree = "<group>";
-		};
 		6FD303971F22E521CD1B84BD11F5C2F3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,14 +482,6 @@
 				02014754F56E8DD7844D87A4486C2420 /* ParameterScale.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		711C2E22CAB27F25657DD73DD6B297C9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				257D0FBEC82B42FA5BAEF69E781C2EED /* AudioKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		77A851C3D789BECF1A61888973D76752 /* Frameworks */ = {
@@ -553,27 +510,13 @@
 			path = "../HOWL/Pods/Target Support Files/ProtonomeAudioKitControls";
 			sourceTree = "<group>";
 		};
-		7A76277817E827D68975F031FAEBC094 /* Support Files */ = {
+		7D1C208D8AB12F03169F67455B6F763D /* Parity */ = {
 			isa = PBXGroup;
 			children = (
-				29400DD2608681DC817CCB3246B016FE /* Bezzy.modulemap */,
-				09657A0CED80A91C4DB0D2425B5E7396 /* Bezzy.xcconfig */,
-				4D2D10F69D2B3E1ED2598D8DB1557EF6 /* Bezzy-dummy.m */,
-				9AD59FB36FC21178973EA77BAABC8601 /* Bezzy-prefix.pch */,
-				17F3924750B11370E71DE52608E981A6 /* Bezzy-umbrella.h */,
-				8D85665EEF14BAD1D6B580306C1557EF /* Info.plist */,
+				AA76BCA15C75363E4BE74BAA0F681E4E /* Parity.swift */,
+				392F1BE89C2240F46BC7332081E0212F /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Bezzy";
-			sourceTree = "<group>";
-		};
-		7AB1163EF4E96785E07F0A255B7B4909 /* MultitouchGestureRecognizer */ = {
-			isa = PBXGroup;
-			children = (
-				F8D7F7336E369A68EC7C74984BE2BC11 /* MultitouchGestureRecognizer.swift */,
-				1AC94B4AC0180DCF58726844671C837E /* Support Files */,
-			);
-			path = MultitouchGestureRecognizer;
+			path = Parity;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -582,32 +525,10 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				D8C1F66B5BA179151B65A2D7F6C9BDE0 /* Development Pods */,
 				77A851C3D789BECF1A61888973D76752 /* Frameworks */,
-				AC84F8A586A424F6A9AEDAB70112B53F /* Pods */,
+				D35327964A6B7499EED35550E16778A2 /* Pods */,
 				B06845210944448D3F38B8C69CA42E7C /* Products */,
 				2D8A8BD2663AC9E4EAC0EAFC31E07ABE /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		862C543EBC03BBE2B2440DD406294341 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6117B0C40633469DA4F71CA8B5EF2A86 /* Info.plist */,
-				F333DD04C4149053A83A9D57EF19DB06 /* Lerp.modulemap */,
-				DFC891F4B36C0D1DD21976EFBFA8F716 /* Lerp.xcconfig */,
-				108E03C9612E6FE01127671FEEAC7FAE /* Lerp-dummy.m */,
-				A9BCB59F90F5849B50650124C96150FE /* Lerp-prefix.pch */,
-				50EDBBF43D9AC0265C8DEC78A7CD6BA7 /* Lerp-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Lerp";
-			sourceTree = "<group>";
-		};
-		864AE82F00026E4342F4EDF2D6CC8C77 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				69E764138116FE5A8E0240B3315DF4CF /* libAudiobus.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8766F9FB3A665A787EC1FF6685AE964E /* Classes */ = {
@@ -619,6 +540,27 @@
 				6FD303971F22E521CD1B84BD11F5C2F3 /* Protocols */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		8A34EC7AD0B7B3F205A53AC75E0938A9 /* Audiobus */ = {
+			isa = PBXGroup;
+			children = (
+				E41E4418046DF628043F9FA0ECD2584B /* ABAudiobusController.h */,
+				6C83CA27383CB3D550D0D8B67C1DB04A /* ABAudioUnitFader.h */,
+				C070B5F359879C5BD334E10C9EFE7FFF /* ABButtonTrigger.h */,
+				AAEBBFDB571E649ABF3F2FDBE6C7384A /* ABCommon.h */,
+				6A518B540D0C2B5FC84AF6B783653987 /* ABFilterPort.h */,
+				0567DB6A2C86EC46FF9F0B26DA0E6B9D /* ABLocalPort.h */,
+				3AA9F1C608BB09A0758C9CF4AF568EDB /* ABMultiStreamBuffer.h */,
+				99A1AE495C940A6667227644E5961FFC /* ABPeer.h */,
+				F9FE964E6A7915110D7FE2B53A4948FE /* ABPort.h */,
+				1996780C7756848DB4D6202764256B76 /* ABReceiverPort.h */,
+				3398C9300ADD5D79317904F5E09D1497 /* ABSenderPort.h */,
+				980A85528886C78BCE38ABE663A39C2E /* ABTrigger.h */,
+				85491D66589E351936D4655134570075 /* Audiobus.h */,
+				38C06CCCE6AB5867E6E41BBB4BC651C9 /* Frameworks */,
+			);
+			path = Audiobus;
 			sourceTree = "<group>";
 		};
 		8E1290AA5CF22D1B480EE3EB693492F1 /* Pods-HOWL */ = {
@@ -639,35 +581,52 @@
 			path = "Target Support Files/Pods-HOWL";
 			sourceTree = "<group>";
 		};
-		9494D5EA6AD0E215FC4829F370BE0762 /* Support Files */ = {
+		91D8F860285D9538EB0B6AB7096D6F2F /* Degrad */ = {
 			isa = PBXGroup;
 			children = (
-				92311872A25927151F1C0EDF23ED17C0 /* Info.plist */,
-				70FD26B5DCDC08C8B3311BEE10FADCB2 /* ProtonomeRoundedViews.modulemap */,
-				09600B579B77DACDBBB83A921A9413F9 /* ProtonomeRoundedViews.xcconfig */,
-				5900010B13D949B0A3594FB084363519 /* ProtonomeRoundedViews-dummy.m */,
-				02FEDBAF3380F08D2015AF2FAA25B1A9 /* ProtonomeRoundedViews-prefix.pch */,
-				ACDDABD50E33941903E01533330EF8D3 /* ProtonomeRoundedViews-umbrella.h */,
+				A95BF878FD520FACF2EEE446E5EF6A67 /* Degrad.swift */,
+				97115D4E378080A86C8D5D2B1721F079 /* Support Files */,
+			);
+			path = Degrad;
+			sourceTree = "<group>";
+		};
+		97115D4E378080A86C8D5D2B1721F079 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				31EC8A76825AB9F55ACC4472A0D70576 /* Degrad.modulemap */,
+				809ED2C54700C2E07DCF606B3AEEF07E /* Degrad.xcconfig */,
+				85153F56AAB77D1FD63DF76DBA4F9848 /* Degrad-dummy.m */,
+				0D6198CD8FD8A62E5B78F0780EEB04C3 /* Degrad-prefix.pch */,
+				9D008C56D32393DA74AE37F6A2C06CD6 /* Degrad-umbrella.h */,
+				24708B2EE089E32C5BD2C0AE6F581E35 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Degrad";
+			sourceTree = "<group>";
+		};
+		A0B522635F47E3BCBF6B7BD1C9B65EE2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				84D058E443E60D008A1EAB2A7EA95BBD /* Info.plist */,
+				0AC635F151058E28B533F4D126995D38 /* ProtonomeRoundedViews.modulemap */,
+				D5C5F72AD50B01BABEE18684ED38FCF6 /* ProtonomeRoundedViews.xcconfig */,
+				6577D865E8CA84DF1F3D5234DCC7EEDC /* ProtonomeRoundedViews-dummy.m */,
+				57CE282118FBA26F7DB7FADAFEE2595E /* ProtonomeRoundedViews-prefix.pch */,
+				825E0E295DCFF3583864C9453984C1C6 /* ProtonomeRoundedViews-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ProtonomeRoundedViews";
 			sourceTree = "<group>";
 		};
-		AC84F8A586A424F6A9AEDAB70112B53F /* Pods */ = {
+		AB23E432EA88F69804C49B8832E9FAF3 /* ProtonomeRoundedViews */ = {
 			isa = PBXGroup;
 			children = (
-				DF1D27C0306602A4B56DA95D4603FD5E /* Audiobus */,
-				3366A81EDF607FC185E1EE84BE21E41E /* AudioKit */,
-				EF7319CE6F103701F245FD19F4E2EC47 /* Bezzy */,
-				EE4DA73491AB1E6E165C64DADEC8FDD1 /* Degrad */,
-				B39BF3812BA19AE0BED394121E605756 /* Lerp */,
-				7AB1163EF4E96785E07F0A255B7B4909 /* MultitouchGestureRecognizer */,
-				5CE5CB4BC445596ABC85FF914EB57E91 /* Parity */,
-				0239162A5DFFD4D3907C386C1544B804 /* Persistable */,
-				2CD484C07F7410ECBE82D8F52198885B /* ProtonomeRoundedViews */,
-				5EB33D30405D461E788B93130D83B574 /* SnapKit */,
+				54F5A9EAA56EE68019BAD20BBFCE1E4C /* RoundedButton.swift */,
+				B9FCE1F06DAE4A11B087D906356F25AF /* RoundedLabel.swift */,
+				922AB97A0E1B7B1614DC7015342FDC6F /* RoundedView.swift */,
+				A0B522635F47E3BCBF6B7BD1C9B65EE2 /* Support Files */,
 			);
-			name = Pods;
+			path = ProtonomeRoundedViews;
 			sourceTree = "<group>";
 		};
 		AFE3EEA95FE6DDF49E305DE25944F304 /* Plots */ = {
@@ -695,13 +654,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B39BF3812BA19AE0BED394121E605756 /* Lerp */ = {
+		B32A34321DE3BF2D0F515F6BCD8CFD8B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B3EA05FBB05B864B883EA02B06CD1DE6 /* Lerp.swift */,
-				862C543EBC03BBE2B2440DD406294341 /* Support Files */,
+				0D3EB2174FCB3BBE7C37C180FD9A4142 /* Info.plist */,
+				AD7E4EA1F3DF1E593F4EC81EAA023BA3 /* Lerp.modulemap */,
+				6F958F4FE4F25CF5BD990ECC2D6C8CD9 /* Lerp.xcconfig */,
+				D3FC5C3CFC2C25CCEF157D9EC78567CF /* Lerp-dummy.m */,
+				897696390B85906EDC282978DBA4D575 /* Lerp-prefix.pch */,
+				7F9378891674577E6117CAC4116515F2 /* Lerp-umbrella.h */,
 			);
-			path = Lerp;
+			name = "Support Files";
+			path = "../Target Support Files/Lerp";
+			sourceTree = "<group>";
+		};
+		B78E608A13C3D6111FDCEB5DE6F66514 /* MultitouchGestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				A009AEE421E588939A447A5D5AEFE6B7 /* MultitouchGestureRecognizer.swift */,
+				081858C2A250AE563A8B1D7BB6D4E91F /* Support Files */,
+			);
+			path = MultitouchGestureRecognizer;
 			sourceTree = "<group>";
 		};
 		B989B5F93EB9CCE009A02167EA140A62 /* iOS */ = {
@@ -712,18 +685,52 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		BD649BEFDF971EFF3099F7DB91CC8030 /* Support Files */ = {
+		C02F6B3BF20246B4D2A590628D92950B /* Persistable */ = {
 			isa = PBXGroup;
 			children = (
-				7B97B3220C70DC93A3210FA3567F26E9 /* Degrad.modulemap */,
-				98A462D8632ABFCE210D5BF3E5EC1127 /* Degrad.xcconfig */,
-				71223546099CFE90C5601F86728DAD5E /* Degrad-dummy.m */,
-				B0850D6451751118EB17D587B7E2B1E7 /* Degrad-prefix.pch */,
-				1C151B475C57E18DE907281C82C5DE31 /* Degrad-umbrella.h */,
-				A84C83DE62F6983B5C5C63BCC636F76C /* Info.plist */,
+				BB213C6F9C5E33E60D90BD8846CC4DBF /* Persistable.swift */,
+				08638C7BF3964F20CE8ED90FDD2B4689 /* Support Files */,
+			);
+			path = Persistable;
+			sourceTree = "<group>";
+		};
+		D35327964A6B7499EED35550E16778A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A34EC7AD0B7B3F205A53AC75E0938A9 /* Audiobus */,
+				0DB0022C0BAC3A216797B4D54E0A27BC /* Bezzy */,
+				91D8F860285D9538EB0B6AB7096D6F2F /* Degrad */,
+				D589452DA399594DC29FA47FB5EDF855 /* Lerp */,
+				B78E608A13C3D6111FDCEB5DE6F66514 /* MultitouchGestureRecognizer */,
+				7D1C208D8AB12F03169F67455B6F763D /* Parity */,
+				C02F6B3BF20246B4D2A590628D92950B /* Persistable */,
+				AB23E432EA88F69804C49B8832E9FAF3 /* ProtonomeRoundedViews */,
+				41ADC9308398E79FFBCF76375162DA12 /* SnapKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D589452DA399594DC29FA47FB5EDF855 /* Lerp */ = {
+			isa = PBXGroup;
+			children = (
+				BD32FA3FD0B097BA977E0CFD75A9CC0B /* Lerp.swift */,
+				B32A34321DE3BF2D0F515F6BCD8CFD8B /* Support Files */,
+			);
+			path = Lerp;
+			sourceTree = "<group>";
+		};
+		D6FF99C9FA496F71CE36CC183478B1DE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AB5AF449F7ED91BBBE860F4C14749CA /* Bezzy.modulemap */,
+				9C0857CD100BD8950D4CEFFB86FF2B96 /* Bezzy.xcconfig */,
+				EE336B24AD1491E024E1B497551AB05B /* Bezzy-dummy.m */,
+				BA7FDA55145C91D630A3F743F3DC3B45 /* Bezzy-prefix.pch */,
+				94D6E8605392C8C071C9EB58E7AE88A9 /* Bezzy-umbrella.h */,
+				40448449422B6186FB3C6FB95D477421 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Degrad";
+			path = "../Target Support Files/Bezzy";
 			sourceTree = "<group>";
 		};
 		D8C1F66B5BA179151B65A2D7F6C9BDE0 /* Development Pods */ = {
@@ -732,27 +739,6 @@
 				F15C75B7B51517F799AB959B20D0EAAF /* ProtonomeAudioKitControls */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		DF1D27C0306602A4B56DA95D4603FD5E /* Audiobus */ = {
-			isa = PBXGroup;
-			children = (
-				7955AD670273BA1074758906417CD834 /* ABAudiobusController.h */,
-				EAF1EFF4BAC891CEA1F4C9496F1362FB /* ABAudioUnitFader.h */,
-				E60D58A3C87437FEF9FC7A541576FA22 /* ABButtonTrigger.h */,
-				4C517D5C0E89D936A0973FE55F54B522 /* ABCommon.h */,
-				C106A13D8B6C2E1C82AFA533F7604652 /* ABFilterPort.h */,
-				AED4DBF6CE6F52B90D533E9314BFBB3A /* ABLocalPort.h */,
-				BDA25387A881B03F73415BB2C1E34D11 /* ABMultiStreamBuffer.h */,
-				E4474F91DFD4D82834BB473D3AD27D47 /* ABPeer.h */,
-				8B5C4612452632775E7E89C43F918E57 /* ABPort.h */,
-				4586C4CA6E1264E37A20DF5AF986459D /* ABReceiverPort.h */,
-				B774EBF8BD3C3408C95CCAD6E74BAB87 /* ABSenderPort.h */,
-				100CBF7897052B24CAD9E59D5391C002 /* ABTrigger.h */,
-				9526DFC435589DD9D7F84FA8BA257672 /* Audiobus.h */,
-				864AE82F00026E4342F4EDF2D6CC8C77 /* Frameworks */,
-			);
-			path = Audiobus;
 			sourceTree = "<group>";
 		};
 		E6223C6985737725E9B29B74F78519F7 /* Controls */ = {
@@ -766,22 +752,18 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
-		EE4DA73491AB1E6E165C64DADEC8FDD1 /* Degrad */ = {
+		F104FC95F86ADB1A274D240F61C6BC86 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1E7293ED02EF08FCDC64E94381BC9A60 /* Degrad.swift */,
-				BD649BEFDF971EFF3099F7DB91CC8030 /* Support Files */,
+				D3416AEF3D1D18B13B0D02FA506A91FE /* Info.plist */,
+				4DD28A28ABAA5AC1162325A727D1F3BD /* SnapKit.modulemap */,
+				0897FD10A019E6F21DE1F996653C836D /* SnapKit.xcconfig */,
+				EEAC61CE3E2F638419F5D0DCB4A340D4 /* SnapKit-dummy.m */,
+				6F87B1425B981C4F28D87D2C2C55606B /* SnapKit-prefix.pch */,
+				14DF86564BA077C60557BE0EDFEE1F16 /* SnapKit-umbrella.h */,
 			);
-			path = Degrad;
-			sourceTree = "<group>";
-		};
-		EF7319CE6F103701F245FD19F4E2EC47 /* Bezzy */ = {
-			isa = PBXGroup;
-			children = (
-				0F92DE094C71903BE81CD96157662B74 /* Bezzy.swift */,
-				7A76277817E827D68975F031FAEBC094 /* Support Files */,
-			);
-			path = Bezzy;
+			name = "Support Files";
+			path = "../Target Support Files/SnapKit";
 			sourceTree = "<group>";
 		};
 		F15C75B7B51517F799AB959B20D0EAAF /* ProtonomeAudioKitControls */ = {
@@ -1336,7 +1318,7 @@
 		};
 		159056105934A21D2496D12EC31CAE13 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A79FBA325471716F21AD697273CFB6E6 /* Parity.xcconfig */;
+			baseConfigurationReference = 13122B71B2E28F8944FA002B614A9D68 /* Parity.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1365,7 +1347,7 @@
 		};
 		1917EDD8C7F761595768A0D1FCA6B67A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09600B579B77DACDBBB83A921A9413F9 /* ProtonomeRoundedViews.xcconfig */;
+			baseConfigurationReference = D5C5F72AD50B01BABEE18684ED38FCF6 /* ProtonomeRoundedViews.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1395,7 +1377,7 @@
 		};
 		228B7F81BEB830FECC29EC5C871D4247 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 764F8D41CC76281181FF2248F1A61A26 /* MultitouchGestureRecognizer.xcconfig */;
+			baseConfigurationReference = 2A09ADE451029FB3AC261C60B622C0A5 /* MultitouchGestureRecognizer.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1424,7 +1406,7 @@
 		};
 		337F4EFBAADEA5BD0DE0DB7437549DB7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98A462D8632ABFCE210D5BF3E5EC1127 /* Degrad.xcconfig */;
+			baseConfigurationReference = 809ED2C54700C2E07DCF606B3AEEF07E /* Degrad.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1453,7 +1435,7 @@
 		};
 		3CB73CDD43ED288560ECB06A42D7715B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09600B579B77DACDBBB83A921A9413F9 /* ProtonomeRoundedViews.xcconfig */;
+			baseConfigurationReference = D5C5F72AD50B01BABEE18684ED38FCF6 /* ProtonomeRoundedViews.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1482,7 +1464,7 @@
 		};
 		3D8175AE3F8B93115EDAF45C1F4A7C32 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98A462D8632ABFCE210D5BF3E5EC1127 /* Degrad.xcconfig */;
+			baseConfigurationReference = 809ED2C54700C2E07DCF606B3AEEF07E /* Degrad.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1542,7 +1524,7 @@
 		};
 		7393E87105C3BF003920C07840CFBFBB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFC891F4B36C0D1DD21976EFBFA8F716 /* Lerp.xcconfig */;
+			baseConfigurationReference = 6F958F4FE4F25CF5BD990ECC2D6C8CD9 /* Lerp.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1571,7 +1553,7 @@
 		};
 		7BE824D5663A50B7D46D030F4782C7BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09657A0CED80A91C4DB0D2425B5E7396 /* Bezzy.xcconfig */;
+			baseConfigurationReference = 9C0857CD100BD8950D4CEFFB86FF2B96 /* Bezzy.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1600,7 +1582,7 @@
 		};
 		83C62703E6989AC5EA8E212A96B88025 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 764F8D41CC76281181FF2248F1A61A26 /* MultitouchGestureRecognizer.xcconfig */;
+			baseConfigurationReference = 2A09ADE451029FB3AC261C60B622C0A5 /* MultitouchGestureRecognizer.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1630,7 +1612,7 @@
 		};
 		8B8FCD05117496DA795DE455756EE3EF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 151E28025D3EE9211295480F12436F16 /* SnapKit.xcconfig */;
+			baseConfigurationReference = 0897FD10A019E6F21DE1F996653C836D /* SnapKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1659,7 +1641,7 @@
 		};
 		8C01158C5690451C54851E547969E83A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 151E28025D3EE9211295480F12436F16 /* SnapKit.xcconfig */;
+			baseConfigurationReference = 0897FD10A019E6F21DE1F996653C836D /* SnapKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1689,7 +1671,7 @@
 		};
 		9240EEBF4D9D0B451CE0B436400A4AA2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06653117A4B5483745BEDCED3D812877 /* Persistable.xcconfig */;
+			baseConfigurationReference = F4EC038A30858EA829BF4A8FE0981686 /* Persistable.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1718,7 +1700,7 @@
 		};
 		9AB41523D7D2F5DFA01A20B6EA37B413 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A79FBA325471716F21AD697273CFB6E6 /* Parity.xcconfig */;
+			baseConfigurationReference = 13122B71B2E28F8944FA002B614A9D68 /* Parity.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1748,7 +1730,7 @@
 		};
 		C0A98C8863EBDFB16FE8B774EE156EA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFC891F4B36C0D1DD21976EFBFA8F716 /* Lerp.xcconfig */;
+			baseConfigurationReference = 6F958F4FE4F25CF5BD990ECC2D6C8CD9 /* Lerp.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1878,7 +1860,7 @@
 		};
 		EDF5383F1062B4AC7B02FD0C4E20138A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09657A0CED80A91C4DB0D2425B5E7396 /* Bezzy.xcconfig */;
+			baseConfigurationReference = 9C0857CD100BD8950D4CEFFB86FF2B96 /* Bezzy.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1942,7 +1924,7 @@
 		};
 		FDAB11F9646EE3736EAD1D97FB29D498 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06653117A4B5483745BEDCED3D812877 /* Persistable.xcconfig */;
+			baseConfigurationReference = F4EC038A30858EA829BF4A8FE0981686 /* Persistable.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
