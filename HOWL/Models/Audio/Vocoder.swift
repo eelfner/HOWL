@@ -180,29 +180,30 @@ private class FilterBank: AKOperationEffect {
         let formantsBandwidthParameter = AKOperation.parameters(Parameter.FormantsBandwidth.rawValue) + 0.01
         
 //        let lfoX = AKOperation.sineWave(frequency: lfoXRateParameter, amplitude: lfoXDepthParameter).scale(minimum: 0.0, maximum: 1.0)
-//        
 //        let lfoY = AKOperation.sineWave(frequency: lfoYRateParameter, amplitude: lfoYDepthParameter).scale(minimum: 0.0, maximum: 1.0)
         
         let topFrequencies = zip(topLeftFrequencies, topRightFrequencies).map { topLeftFrequency, topRightFrequency in
-            return xInParameter.scale(minimum: topLeftFrequency, maximum: topRightFrequency)
+            return xInParameter * (topRightFrequency - topLeftFrequency) + topLeftFrequency
         }
         
         let bottomFrequencies = zip(bottomLeftFrequencies, bottomRightFrequencies).map { bottomLeftFrequency, bottomRightFrequency in
-            return xInParameter.scale(minimum: bottomLeftFrequency, maximum: bottomRightFrequency)
+            return xInParameter * (bottomRightFrequency - bottomLeftFrequency) + bottomLeftFrequency
         }
         
         let frequencies = zip(topFrequencies, bottomFrequencies).map { topFrequency, bottomFrequency in
-            return formantsFrequencyParameter * yInParameter.scale(minimum: topFrequency, maximum: bottomFrequency)
+            return formantsBandwidthParameter * (yInParameter * (bottomFrequency - topFrequency) + topFrequency)
         }
         
         let bandwidths = frequencies.map { frequency in
-            return formantsBandwidthParameter * (frequency * 0.02 + 50.0)
+            return formantsFrequencyParameter * (frequency * 0.02 + 50.0)
         }
         
         let filters = zip(frequencies, bandwidths).reduce(AKOperation.input) { input, parameters in
             let (frequency, bandwidth) = parameters
             return input.resonantFilter(frequency: frequency, bandwidth: bandwidth)
         }
+        
+//        let filter = AKOperation.input.resonantFilter(frequency: 1000.0, bandwidth: 100.0).resonantFilter(frequency: 2000.0, bandwidth: 200.0).resonantFilter(frequency: 3000.0, bandwidth: 300.0).resonantFilter(frequency: 4000.0, bandwidth: 400.0)
         
         self.init(input, operation: filters)
         self.parameters = [
@@ -226,6 +227,32 @@ private class FilterBank: AKOperationEffect {
         set {
             parameters[parameter.rawValue] = newValue
         }
+    }
+    
+}
+
+infix operator ++ {
+    associativity left
+    precedence 140
+}
+
+private func ++ (left: String, right: String) -> String {
+    return left + "\n" + right
+}
+
+extension AKOperation {
+    
+    /// This scales from 0 to 1 to a range defined by a minimum and maximum point in the input and output domain.
+    ///
+    /// - Parameters:
+    ///   - minimum: Minimum value to scale to. (Default: 0)
+    ///   - maximum: Maximum value to scale to. (Default: 1)
+    ///
+    public func lerp(
+        minimum minimum: AKParameter = 0,
+                maximum: AKParameter = 1
+        ) -> AKOperation {
+        return AKOperation("(\(self) \(minimum) \(maximum) scale)")
     }
     
 }
