@@ -82,7 +82,7 @@ class Vocoder: AKNode {
         }
     }
     
-    // MARK: Special properties
+    // MARK: - Special properties
     
     var location: CGPoint {
         get {
@@ -131,6 +131,26 @@ class Vocoder: AKNode {
     }
 
 }
+
+// MARK: - Toggleable
+
+extension Vocoder: AKToggleable {
+    
+    var isStarted: Bool {
+        return mixer.isStarted
+    }
+    
+    func start() {
+        mixer.start()
+    }
+    
+    func stop() {
+        mixer.stop()
+    }
+    
+}
+
+// MARK: - Filter bank
 
 private class FilterBank: AKOperationEffect {
     
@@ -214,7 +234,7 @@ private class FilterBank: AKOperationEffect {
         ]
     }
     
-    // MARK: Parameters
+    // MARK: - Parameters
     
     func setValue(value: Double, forParameter parameter: Parameter) {
         parameters[parameter.rawValue] = value
@@ -226,6 +246,8 @@ private class FilterBank: AKOperationEffect {
     
 }
 
+// MARK: - Private operators
+
 infix operator ++ {
     associativity left
     precedence 140
@@ -233,20 +255,4 @@ infix operator ++ {
 
 private func ++ (left: String, right: String) -> String {
     return left + "\n" + right
-}
-
-extension Vocoder: AKToggleable {
-    
-    var isStarted: Bool {
-        return mixer.isStarted
-    }
-    
-    func start() {
-        mixer.start()
-    }
-    
-    func stop() {
-        mixer.stop()
-    }
-    
 }
